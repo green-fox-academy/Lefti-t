@@ -1,0 +1,105 @@
+header{ 
+    width: 1200px;
+    height: 350px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("http://stayathome-syllabus.greenfox.academy/week01/assets/first-website-header.png");
+    background-size: 100% 100%;
+    position: relative;
+    border: 1px solid grey;
+    
+   
+  }
+  .title {
+    width: 650px;
+    height: 100px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -230px;
+    margin-bottom: 150px;
+    font-family: 'Abril Fatface', cursive;
+    color: #222;
+    font-size: 38px;
+    align-items: center;
+    text-shadow: 1px 1px red;
+  
+  }
+  
+  .anakin  {
+      margin-top: -55px ;
+      font-weight: lighter;
+     font-size: 74px;
+    font-family: 'Abril Fatface', cursive;
+    color: red;
+    text-shadow: 1px 1px #222;
+  }
+  
+
+  .container {
+    position: relative;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #222;
+    font-size: 18px;
+    line-height: 25px;
+
+  }
+  
+  blockquote {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    font-family: 'Abril Fatface', cursive;
+    background-image: linear-gradient(to bottom right, #444, darkgrey ); 
+    color: white;
+    font-size: 42px;
+    padding: 40px;
+    line-height: 52px;
+    letter-spacing: 1px;
+    text-align: left;
+    border: 1px solid red;
+    text-shadow: 1px 1px red;
+    
+    
+  
+  }
+  blockquote::before {
+    content: '“';
+    font-size: 120px;
+      position: absolute;
+    top: 25px;
+    left: 5px;
+  }
+  
+  h2 {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+      letter-spacing: 1px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 400px;
+      margin-bottom: 50px;
+   }
+  
+  h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-top: -25px;
+  }
+  
+  ul {
+    margin-bottom: 35px;
+  }
