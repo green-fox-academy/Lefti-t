@@ -97,7 +97,22 @@ public class Main {
 
 
 
+        // Store your favorite number in a variable (as a number)
+        // And print it like this: "My favorite number is: 8"
+        int favoriteNumber = 8;
+        System.out.println("My favourite number is: " + favoriteNumber);
 
+
+
+        // Swap the values of the variables
+        int a = 123;
+        int b = 526;
+        int temp = a;
+        a = b;
+        b = temp;
+
+        System.out.println(a);
+        System.out.println(b);
 
 
 
