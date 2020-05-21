@@ -87,7 +87,16 @@ public class Main {
         // Print the percentage of the coding hours in the semester if the average
         // work hours weekly is 52
 
-       int 
+       int dailyHours = 6;
+       int weekDays = 5;
+       int weeklyHours = dailyHours * weekDays ;
+       int totalDays = 17 * 5;
+       int weeklyHours2 = 52;
+       System.out.println("Total coding hours are " + dailyHours * totalDays);
+       System.out.println("The coding hours percentage is " + (float) weeklyHours / weeklyHours2 *100 + "%");
+
+
+
 
 
 
