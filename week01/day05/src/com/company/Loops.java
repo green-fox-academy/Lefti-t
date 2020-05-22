@@ -10,15 +10,27 @@ public class Loops {
     public static void main(String[] args) {
 
 
-        // Create a program that writes this line 100 times:
-        // "I won't cheat on the exam!"
+        // Write a program that reads a number from the standard input, then draws a
+        // triangle like this:
+        //
+        // *
+        // **
+        // ***
+        // ****
+        //
+        // The triangle should have as many lines as the number was
 
 
-        for (int i = 0; i < 100; i++) {
-            System.out.println("I won't cheat on the exam!");
+
+        int triangle = 5;
+        for (int row = 1; row <= triangle; row++) {
+            for (int column = 1; column <= row; column++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
 
-        
-
     }
+
 }
+
