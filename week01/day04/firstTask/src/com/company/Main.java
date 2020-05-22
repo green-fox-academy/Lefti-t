@@ -1,8 +1,8 @@
 package com.company;
 
 import java.sql.SQLOutput;
+import java.sql.Struct;
 import java.util.Scanner;
-
 
 
 public class Main {
@@ -24,12 +24,10 @@ public class Main {
         System.out.println("Couldn't put Humpty together again.");*/
 
         String firstVerse = "Humpty Dumpty sat on a wall,";
-        String  secondVerse = "Humpty Dumpty had a great fall.";
+        String secondVerse = "Humpty Dumpty had a great fall.";
         String thirdVerse = "All the king's horses and all the king's men";
-        String fourthVerse ="Couldn't put Humpty together again.";
-        System.out.println(firstVerse + "\n" + secondVerse + "\n" + thirdVerse+ "\n" +  fourthVerse );
-
-
+        String fourthVerse = "Couldn't put Humpty together again.";
+        System.out.println(firstVerse + "\n" + secondVerse + "\n" + thirdVerse + "\n" + fourthVerse);
 
 
         // Greet 3 of your classmates with this program, in three separate lines
@@ -39,8 +37,7 @@ public class Main {
         // Hello, Mary!
         // Hello, Joe!
 
-        System.out.println("Hello Esther" + "\n" + "Hello Mary" + "\n" + "Hello Joe" );
-
+        System.out.println("Hello Esther" + "\n" + "Hello Mary" + "\n" + "Hello Joe");
 
 
         // Write a program that prints a few details to the terminal window about you
@@ -60,7 +57,6 @@ public class Main {
         System.out.println(name + "\n" + age + "\n" + height);
 
 
-
         // Create a program that prints a few operations on two numbers: 22 and 13
         // Print the result of 13 added to 22
         // Print the result of 13 substracted from 22
@@ -69,13 +65,12 @@ public class Main {
         // Print the integer part of 22 divided by 13
         // Print the remainder of 22 divided by 13
 
-        System.out.println( 13 + 22);
-        System.out.println(22-13);
+        System.out.println(13 + 22);
+        System.out.println(22 - 13);
         System.out.println(22 * 13);
         System.out.println(22 / 13.);
         System.out.println(22 / 13);
-        System.out.println( 22 % 13);
-
+        System.out.println(22 % 13);
 
 
         // An average Green Fox attendee codes 6 hours daily
@@ -87,21 +82,19 @@ public class Main {
         // Print the percentage of the coding hours in the semester if the average
         // work hours weekly is 52
 
-       int dailyHours = 6;
-       int weekDays = 5;
-       int weeklyHours = dailyHours * weekDays ;
-       int totalDays = 17 * 5;
-       int weeklyHours2 = 52;
-       System.out.println("Total coding hours are " + dailyHours * totalDays);
-       System.out.println("The coding hours percentage is " + (float) weeklyHours / weeklyHours2 *100 + "%");
-
+        int dailyHours = 6;
+        int weekDays = 5;
+        int weeklyHours = dailyHours * weekDays;
+        int totalDays = 17 * 5;
+        int weeklyHours2 = 52;
+        System.out.println("Total coding hours are " + dailyHours * totalDays);
+        System.out.println("The coding hours percentage is " + (float) weeklyHours / weeklyHours2 * 100 + "%");
 
 
         // Store your favorite number in a variable (as a number)
         // And print it like this: "My favorite number is: 8"
         int favoriteNumber = 8;
         System.out.println("My favourite number is: " + favoriteNumber);
-
 
 
         // Swap the values of the variables
@@ -115,15 +108,11 @@ public class Main {
         System.out.println(b);
 
 
-
-
         // Print the Body mass index (BMI) based on these values
         double massInKg = 98.2;
         double heightInM = 1.92;
-        double BMI = massInKg / Math.pow(heightInM,2) ;
+        double BMI = massInKg / Math.pow(heightInM, 2);
         System.out.println("My BMI is " + BMI + "%, I have to start a diet.");
-
-
 
 
         // Define several things as a variable then print their values
@@ -136,8 +125,7 @@ public class Main {
         int age1 = 35;
         double height1 = 1.92;
         boolean married = false;
-        System.out.println("My name is " + myName + " and i am " + age1 + "years old, " + height1 +  "cm tall and the statement that i am married is " + married + ".");
-
+        System.out.println("My name is " + myName + " and i am " + age1 + "years old, " + height1 + "cm tall and the statement that i am married is " + married + ".");
 
 
         int aa = 3;
@@ -162,29 +150,28 @@ public class Main {
 
         int e = 8;
         // please cube of e's value
-        e = (int) Math.pow(e,3);
+        e = (int) Math.pow(e, 3);
         System.out.println(e);
 
         int f1 = 123;
         int f2 = 345;
         // tell if f1 is bigger than f2 (print as a boolean)
-        System.out.println( f1 > f2);
+        System.out.println(f1 > f2);
         int g1 = 350;
         int g2 = 200;
         // tell if the double of g2 is bigger than g1 (print as a boolean)
-        System.out.println(g2*2 > g1);
+        System.out.println(g2 * 2 > g1);
         int h = 135798745;
         // tell if it has 11 as a divisor (print as a boolean)
-        System.out.println( h%11==0);
+        System.out.println(h % 11 == 0);
         int i1 = 10;
         int i2 = 3;
         // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
-        System.out.println(i1 > Math.pow(i2,2)&&(i1 < Math.pow(i2,3)));
+        System.out.println(i1 > Math.pow(i2, 2) && (i1 < Math.pow(i2, 3)));
 
         int j = 1521;
         // tell if j is dividable by 3 or 5 (print as a boolean)
-        System.out.println( j%3==0 && j%5==0);
-
+        System.out.println(j % 3 == 0 && j % 5 == 0);
 
 
         // Write a program that stores 3 sides of a cuboid as variables (doubles)
@@ -195,10 +182,8 @@ public class Main {
         double side1 = 10;
         double side2 = 10;
         double side3 = 10;
-        System.out.println("The total surface area is " + (2*side1*side2 + 2*side2*side3 + 2*side1*side3) );
+        System.out.println("The total surface area is " + (2 * side1 * side2 + 2 * side2 * side3 + 2 * side1 * side3));
         System.out.println("The total volume is " + side1 * side2 * side3);
-
-
 
 
         // Write a program that prints the remaining seconds (as an integer) from a
@@ -206,8 +191,55 @@ public class Main {
         int currentHours = 14;
         int currentMinutes = 34;
         int currentSeconds = 42;
-        int remainingSeconds = ((23-currentHours)*60 + (59-currentMinutes))*60 + (60 - currentSeconds) ;
+        int remainingSeconds = ((23 - currentHours) * 60 + (59 - currentMinutes)) * 60 + (60 - currentSeconds);
         System.out.println(remainingSeconds);
+
+
+        // Modify this program to greet user instead of the World!
+        // The program should ask for the name of the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What's your name son?");
+        String nameinput = scanner.nextLine();
+        System.out.println("Hello, " + nameinput);
+
+
+        // Write a program that asks for a double that is a distance in miles,
+        // then it converts that value to kilometers and prints it
+        System.out.println("How many miles have you driven?");
+        double miles = scanner.nextDouble();
+        double km = miles * 1.60934;
+        System.out.println("This would be " + km + "km");
+
+
+        // Write a program that asks for two integers
+        // The first represents the number of chickens the farmer has
+        // The second represents the number of pigs owned by the farmer
+        // It should print how many legs all the animals have
+
+        System.out.println("How many chickens have you got?");
+        int chickens = scanner.nextInt();
+        System.out.println("How many pigs have you got?");
+        int pigs = scanner.nextInt();
+        int totalLegs = (chickens * 2) + (pigs * 4);
+        System.out.println("They got a total of " + totalLegs + " legs.");
+
+
+        // Write a program that asks for 5 integers in a row,
+        // then it should print the sum and the average of these numbers like:
+        //
+        // Sum: 22, Average: 4.4
+
+
+        System.out.println("Give me 5 numbers.");
+        int number1 = scanner.nextInt();
+        int number2 = scanner.nextInt();
+        int number3 = scanner.nextInt();
+        int number4 = scanner.nextInt();
+        int number5 = scanner.nextInt();
+        System.out.println("Sum: " + (number1 + number2 + number3 + number4 + number5));
+        System.out.println("Average: " + (number1 + number2 + number3 + number4 + number5) / 5 );
+
+
     }
 }
 
