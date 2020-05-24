@@ -91,7 +91,7 @@ public class Loops {
                 System.out.println("Fizzbuzz");
             } else if (i % 5 == 0) {
                 System.out.println("Buzz");
-            } else  if (i % 3 == 0) {
+            } else if (i % 3 == 0) {
                 System.out.println("Fizz");
             } else {
                 System.out.println(i);
@@ -109,7 +109,6 @@ public class Loops {
         // The triangle should have as many lines as the number was
 
 
-
         int triangle = 5;
         for (int row = 1; row <= triangle; row++) {
             for (int column = 1; column <= row; column++) {
@@ -118,7 +117,39 @@ public class Loops {
             System.out.println();
         }
 
+
+        // Write a program that stores a number, and the user has to figure it out.
+        // The user can input guesses, after each guess the program would tell one
+        // of the following:
+        //
+        // The stored number is higher
+        // The stried number is lower
+        // You found the number: 8
+
+
+        int correctnumber = 8;
+        System.out.println("Give me a number from 1-10");
+        int guess = scanner.nextInt();
+
+        if (guess == correctnumber) {
+            System.out.println("That is correct!");
+        }
+
+        while (guess != correctnumber) {
+            if (guess < 1 || guess > 10)  {
+                System.out.println("That was not a valid number.");
+            } else if (guess > correctnumber) {
+                System.out.println("A bit lower....");
+            } else if (guess < correctnumber) {
+                System.out.println("A bit higher....");
+            }
+            break;
+            }
+        }
     }
 
-}
+
+
+
+
 
