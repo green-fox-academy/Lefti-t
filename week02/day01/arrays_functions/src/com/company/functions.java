@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.stream.IntStream;
+
 public class functions {
 
 
@@ -16,8 +18,7 @@ public class functions {
 
         // - Create a string variable named `al` and assign the value `Green Fox` to it
         String al= "Green Fox!";
-        greet(al);
-
+        System.out.println(greet(al));
 
 
 
@@ -26,6 +27,14 @@ public class functions {
         // - Create a string variable named `typo` and assign the value `Chinchill` to it
         String typo = "Chinchill";
         System.out.println(appendAFunc(typo));
+
+
+
+
+
+        // Write a function called `sum` that returns the sum of numbers from zero to the given parameter
+        int numbers = 5;
+        System.out.println(append(numbers));
     }
 
 
@@ -47,8 +56,8 @@ public class functions {
     //     - Greeting is printing e.g. `Greetings dear, Green Fox`
     // - Greet `al`
 
-    public static void greet(String al) {
-        System.out.println("Hello " + al);
+    public static String greet(String al) {
+       return "Hello " + al;
     }
 
 
@@ -65,4 +74,15 @@ public class functions {
         return typo+"a";
     }
 
+
+
+    // Write a function called `sum` that returns the sum of numbers from zero to the given parameter
+
+
+    public static int append(int numbers){
+        for (int i = 0; i < numbers ; i++) {
+            return (int) ((double)numbers/2*(numbers+1));
+        }
+        return numbers;
+    }
 }
