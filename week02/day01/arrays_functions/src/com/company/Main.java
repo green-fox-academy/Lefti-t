@@ -183,9 +183,10 @@ public class Main {
         for (int i = 0; i < numbers7.length / 2; i++) {
             int temp2 = numbers7[i];
             numbers7[i] = numbers7[numbers7.length - i - 1];
+            numbers7[numbers7.length - i - 1]= temp2;
         }
-        for (int j = 0; j < numbers7.length; j++) {
-            System.out.println(numbers7[j]);
+        for (int j : numbers7) {
+            System.out.println(j);
         }
     }
 }
