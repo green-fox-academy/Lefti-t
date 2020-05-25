@@ -119,10 +119,26 @@ public class Main {
         int[] numList = {3,4,5,6,7};
         for (int i = 0; i < numList.length ; i++) {
             numList[i] *= 2;
+            System.out.println(numList[i]);
         }
-        for (int j = 0; j < numList.length ; j++) {
-            System.out.println(numList[j]);
+
+
+        // - Create a two dimensional array
+        //   which can contain the different shades of specified colors
+        // - In `colors[0]` store the shades of green:
+        //   `"lime", "forest green", "olive", "pale green", "spring green"`
+        // - In `colors[1]` store the shades of red:
+        //   `"orange red", "red", "tomato"`
+        // - In `colors[2]` store the shades of pink:
+        //   `"orchid", "violet", "pink", "hot pink"`
+
+
+        String [][] colorArray = {{"lime", "forest green", "olive", "pale green", "spring green"} , {"orange red", "red", "tomato"} , {"orchid", "violet", "pink", "hot pink"}};
+
+        for (int i = 0; i < colorArray.length ; i++) {
+            System.out.println(colorArray[1][i]);
         }
+
 
 
     }
