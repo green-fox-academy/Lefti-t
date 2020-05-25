@@ -35,6 +35,13 @@ public class functions {
         // Write a function called `sum` that returns the sum of numbers from zero to the given parameter
         int numbers = 5;
         System.out.println(append(numbers));
+
+
+
+
+        //   that returns it's input's factorial
+        int number = 5;
+        System.out.println("Factorial of "+ number + " is " + factorio(5));
     }
 
 
@@ -85,4 +92,19 @@ public class functions {
         }
         return numbers;
     }
-}
+
+
+
+    // - Create a function called `factorio`
+    //   that returns it's input's factorial
+
+
+    public static int factorio(int number){
+        int result =1,i;
+        for(i=2;i<=number;i++)
+            result *= i;
+            return result;
+        }
+    }
+
+
