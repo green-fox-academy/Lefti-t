@@ -1,8 +1,10 @@
 package com.company;
 
+import java.util.stream.IntStream;
+
+
+
 public class Main {
-
-
 
 
     public static void main(String[] args) {
@@ -13,9 +15,8 @@ public class Main {
         // - Print the third element of `numbers`
 
 
-        int [] numbers = {4,5,6,7};
+        int[] numbers = {4, 5, 6, 7};
         System.out.println(numbers[2]);
-
 
 
         // - Create an array variable named `firstArrayOfNumbers`
@@ -26,12 +27,10 @@ public class Main {
         //   elements than `firstArrayOfNumbers`
 
 
-
-        int[] firstArrayofNumbers = {1,2,3};
-        int []secondArrayofNumbers = {4,5};
-        if ( secondArrayofNumbers.length > firstArrayofNumbers.length)
-        System.out.println("secondArrayOfNumbers is longer");
-
+        int[] firstArrayofNumbers = {1, 2, 3};
+        int[] secondArrayofNumbers = {4, 5};
+        if (secondArrayofNumbers.length > firstArrayofNumbers.length)
+            System.out.println("secondArrayOfNumbers is longer");
 
 
         // - Create an array variable named `numbers`
@@ -39,8 +38,7 @@ public class Main {
         // - Print the sum of the second and the third element
 
 
-
-        int [] numbers2 = {54,23,66,12};
+        int[] numbers2 = {54, 23, 66, 12};
         System.out.println(numbers2[2] + numbers2[3]);
 
 
@@ -50,7 +48,7 @@ public class Main {
         // - Print the fourth element
 
 
-        int [] numbers3 = {1,2,3,8,5,6};
+        int[] numbers3 = {1, 2, 3, 8, 5, 6};
         numbers3[3] = 4;
         System.out.println(numbers3[3]);
 
@@ -61,11 +59,10 @@ public class Main {
         // - Print the third element
 
 
-        int [] numbers4 = {1,2,3,4,5};
-        for (int i = numbers4[2]; i < numbers4[4] ; i++) {
+        int[] numbers4 = {1, 2, 3, 4, 5};
+        for (int i = numbers4[2]; i < numbers4[4]; i++) {
             System.out.println(numbers4[i]);
         }
-
 
 
         // - Create an array variable named `numbers`
@@ -73,11 +70,10 @@ public class Main {
         // - Print all the elements of `numbers`
 
 
-        int []numbers5 = {4,5,6,7};
-        for (int i = 0; i < numbers5.length ; i++) {
+        int[] numbers5 = {4, 5, 6, 7};
+        for (int i = 0; i < numbers5.length; i++) {
             System.out.println(numbers5[i]);
         }
-
 
 
         // - Create (dynamically) a two dimensional array
@@ -91,22 +87,21 @@ public class Main {
         // - Print this two dimensional array to the output
 
 
+        int[][] twoDimensionalArray = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}};
 
-        int [][] twoDimensionalArray  = {{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
-
-        for (int i = 0; i < twoDimensionalArray.length ; i++) {
+        for (int i = 0; i < twoDimensionalArray.length; i++) {
             System.out.print(twoDimensionalArray[0][i] + " ");
         }
         System.out.println();
-        for (int j = 0; j < twoDimensionalArray.length ; j++) {
+        for (int j = 0; j < twoDimensionalArray.length; j++) {
             System.out.print(twoDimensionalArray[1][j] + " ");
         }
         System.out.println();
-        for (int k = 0; k < twoDimensionalArray.length ; k++) {
+        for (int k = 0; k < twoDimensionalArray.length; k++) {
             System.out.print(twoDimensionalArray[2][k] + " ");
         }
         System.out.println();
-        for (int l = 0; l < twoDimensionalArray.length ; l++) {
+        for (int l = 0; l < twoDimensionalArray.length; l++) {
             System.out.print(twoDimensionalArray[3][l] + " ");
         }
         System.out.println();
@@ -116,8 +111,8 @@ public class Main {
         //   with the following content: `[3, 4, 5, 6, 7]`
         // - Double all the values in the array
 
-        int[] numList = {3,4,5,6,7};
-        for (int i = 0; i < numList.length ; i++) {
+        int[] numList = {3, 4, 5, 6, 7};
+        for (int i = 0; i < numList.length; i++) {
             numList[i] *= 2;
             System.out.println(numList[i]);
         }
@@ -133,9 +128,9 @@ public class Main {
         //   `"orchid", "violet", "pink", "hot pink"`
 
 
-        String [][] colorArray = {{"lime", "forest green", "olive", "pale green", "spring green"} , {"orange red", "red", "tomato"} , {"orchid", "violet", "pink", "hot pink"}};
+        String[][] colorArray = {{"lime", "forest green", "olive", "pale green", "spring green"}, {"orange red", "red", "tomato"}, {"orchid", "violet", "pink", "hot pink"}};
 
-        for (int i = 0; i < colorArray.length ; i++) {
+        for (int i = 0; i < colorArray.length; i++) {
             System.out.println(colorArray[1][i]);
         }
 
@@ -145,13 +140,54 @@ public class Main {
         // - Add all elements an `"a"` at the end
 
 
-        String [] animals = {"koal","pand","zebr"};
+        String[] animals = {"koal", "pand", "zebr"};
 
-        for (int i = 0; i < animals.length ; i++) {
+        for (int i = 0; i < animals.length; i++) {
             animals[i] = animals[i] + "a";
             System.out.println(animals[i]);
 
         }
 
+        // - Create an array variable named `orders`
+        //   with the following content: `["first", "second", "third"]`
+        // - Swap the first and the third element of `orders`
+
+
+        String[] orders = {"first", "second", "third"};
+        String temp = orders[0];
+        orders[0] = orders[2];
+        orders[2] = temp;
+        for (int i = 0; i < orders.length; i++) {
+            System.out.println(orders[i]);
+        }
+
+
+        // - Create an array variable named `numbers`
+        //   with the following content: `[3, 4, 5, 6, 7]`
+        // - Print the sum of the elements in `numbers`
+
+
+        int[] numbers6 = {3, 4, 5, 6, 7};
+        int sum = IntStream.of(numbers6).sum();
+        System.out.println("The sum is " + sum);
+
+
+        // - Create an array variable named `numbers`
+        //   with the following content: `[3, 4, 5, 6, 7]`
+        // - Reverse the order of the elements in `numbers`
+        // - Print the elements of the reversed `numbers`
+
+
+        int[] numbers7 = {3, 4, 5, 6, 7};
+
+        for (int i = 0; i < numbers7.length / 2; i++) {
+            int temp2 = numbers7[i];
+            numbers7[i] = numbers7[numbers7.length - i - 1];
+            numbers7[numbers7.length - i - 1] = temp2;
+        }
+        for (int j = 0; j < numbers7.length; j++) {
+            System.out.println(numbers7[j]);
+        }
     }
 }
+
