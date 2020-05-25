@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 
 
-public class Main {
+public class arrays {
 
 
     public static void main(String[] args) {
