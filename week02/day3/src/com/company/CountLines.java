@@ -23,8 +23,8 @@ public class CountLines {
             List<String> lines = Files.readAllLines(file);
                 System.out.println(lines.size());
         }catch (Exception e) {
-            System.out.println("File is not readable");
         }
+    return;
 
     }
 }
