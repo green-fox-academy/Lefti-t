@@ -5,40 +5,34 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class LinePlay {
     public static void mainDraw(Graphics graphics) {
-        // Create a function that draws a single line and takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
 
 
-        int x1 = 0;
-        int x2 = 320;
-        int y1 = 0;
-        int y2 = 320;
 
-        for (int i = 0; i < 17; i++) {
-            graphics.setColor(Color.red);
-            drawLine(i * (x1 + 20), y1, graphics);
+        int x1 = 40;
+        int x2 = 20;
+        int y1 = 40;
+        int y2 = 20;
 
-            drawLine(x1, i * (y1 + 20), graphics);
+        graphics.setColor(Color.white);
+        graphics.fillRect(0,0,320,320);
 
-            drawLine(i * (x1 + 20), y2, graphics);
+        for (int i = 0; i < 15; i++) {
+            graphics.setColor(Color.blue);
+            graphics.drawLine(x1, 0, WIDTH ,y2);
+            graphics.setColor(Color.green);
+            graphics.drawLine(0, y1, x2 ,HEIGHT);
 
-            drawLine(x2, i * (y1 + 20), graphics);
 
+            x1 += 20;
+            y1 += 20;
+            x2 += 20;
+            y2 += 20;
         }
     }
 
 
-    public static void drawLine(int x, int y, Graphics graphics) {
-
-
-        graphics.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
-
-
-    }
 
     // Don't touch the code below
     static int WIDTH = 320;
