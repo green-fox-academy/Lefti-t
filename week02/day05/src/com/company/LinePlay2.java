@@ -5,27 +5,47 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class LinePlay2 {
     public static void mainDraw(Graphics graphics) {
-        // Reproduce this:
-        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
+        int div = 2;
 
-        for (int i = 0; i <20 ; i++) {
-            drawSquare(i ,graphics);
+        int x1 = 40 /div;
+        int x2 = 20/ div;
+        int y1 = 40/ div;
+        int y2 = 20/ div;
 
+        for (int i = 0; i < 4; i++) {
+
+            draw(x1, y1, x2, y2, graphics);
+
+
+        }
+    }
+
+
+    public static void draw(int x1,int y1, int x2, int y2, Graphics graphics) {
+
+        int div = 2;
+
+
+        graphics.setColor(Color.white);
+        graphics.fillRect(0, 0, 320, 320);
+
+        for (int i = 0; i < 15; i++) {
+            graphics.setColor(Color.blue);
+            graphics.drawLine(x1, 0, WIDTH / div, y2);
+            graphics.setColor(Color.green);
+            graphics.drawLine(0, y1, x2, HEIGHT / div);
+
+
+
+            x1 += 20 / div;
+            y1 += 20 / div;
+            x2 += 20 / div;
+            y2 += 20 / div;
         }
 
     }
-
-
-    public  static void drawSquare(int x, Graphics graphics) {
-
-        graphics.setColor(Color.MAGENTA);
-        graphics.fillRect((x*10)+10,(x*10+10),10,10);
-        graphics.setColor(Color.black);
-        graphics.drawRect((x*10)+10,(x*10+10),10,10);
-    }
-
     // Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 320;
