@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Bunnies {
 
     public static void main(String[] args) {
-        int ears = 2;
+
         System.out.println("Give me a number of bunnies");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
