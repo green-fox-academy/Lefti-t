@@ -6,33 +6,33 @@ public class Strings {
 
 
     public static void main(String[] args) {
+        char x = 'x';
         System.out.println("Give me a set of characters");
         Scanner scanner = new Scanner(System.in);
         String s = scanner.next();
-        System.out.println(strings(s));
+        System.out.println(strings(s,x));
 
     }
 
-    public static String strings(String s) {
+    public static String strings(String s, char x) {
 
 
         //Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
 
 
-        if (s.isEmpty()) {
+        if (s.length() == 0) {
             return s;
         }
         if (s.charAt(0) == 'x') {
-            s = s.replaceFirst("x", "y");
+            s = s.replaceAll("x", "y");
 
-            return s.charAt(0) + strings(s.substring(1));
+            return s.charAt(0) + strings(s.substring(1),x);
 
-        } else if (s.charAt(0) != 'x') {
-            return s.charAt(0) + strings(s.substring(1));
+        }  else {
+            return s.charAt(0) + strings(s.substring(1), x);
         }
 
 
-        return s;
     }
 }
 
