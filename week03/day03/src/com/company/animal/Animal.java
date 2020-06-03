@@ -1,4 +1,4 @@
-package com.company;
+package com.company.animal;
 
 public class Animal {
 
@@ -17,7 +17,6 @@ public class Animal {
     }
 
 
-
     public void setHunger() {
         this.hunger--;
     }
@@ -26,13 +25,11 @@ public class Animal {
         this.thirst--;
     }
 
-        public void setPlay(){
+    public void setPlay() {
         this.hunger++;
         this.thirst++;
 
-     }
-
-   
+    }
 
 
 }
