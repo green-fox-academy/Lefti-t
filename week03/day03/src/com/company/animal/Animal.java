@@ -11,15 +11,22 @@ public class Animal {
         this.thirst = 50;
     }
 
-    public Animal(int hunger, int thirst) {
+    public Animal(String name,int hunger, int thirst) {
         this.hunger = hunger;
         this.thirst = thirst;
     }
 
 
     public void setHunger() {
+
         this.hunger--;
     }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+
 
     public void setThirst() {
         this.thirst--;

@@ -15,6 +15,10 @@ public class Sharpie {
 
 
     public void use(){
-        inkAmount -= 5;
+        inkAmount -= 50;
+    }
+
+    public void use(int amount){
+        inkAmount -= amount;
     }
 }

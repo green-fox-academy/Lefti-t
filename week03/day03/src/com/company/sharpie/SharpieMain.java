@@ -4,15 +4,25 @@ public class SharpieMain {
 
     public static void main(String[] args) {
 
+        SharpieSet sharpieSet = new SharpieSet();
+        sharpieSet.sharpieList.add(new Sharpie("Black",3f));
+        sharpieSet.sharpieList.add(new Sharpie("Blue",5f));
+        sharpieSet.sharpieList.add(new Sharpie("Red",8f));
 
-        Sharpie blue5 = new Sharpie("blue",5f);
-        Sharpie black3 = new Sharpie("black",3f);
-        Sharpie red8 = new Sharpie("red",8f);
 
 
-        red8.use();
 
-        System.out.println(red8.inkAmount + " \n" + black3.inkAmount);
+
+        sharpieSet.sharpieList.get(2).use();
+        sharpieSet.sharpieList.get(2).use();
+        sharpieSet.sharpieList.get(0).use(70);
+
+
+        System.out.println();
+        System.out.println("The " + sharpieSet.sharpieList.get(0).color + " sharpie has " + sharpieSet.sharpieList.get(0).inkAmount);
+        System.out.println("The " + sharpieSet.sharpieList.get(1).color + " sharpie has " + sharpieSet.sharpieList.get(1).inkAmount);
+        System.out.println("The " + sharpieSet.sharpieList.get(2).color + " sharpie has " + sharpieSet.sharpieList.get(1).inkAmount);
+        System.out.println(sharpieSet.usable() +  " out of "+ sharpieSet.sharpieList.size() + " sharpies are still usable");
         }
     }
 

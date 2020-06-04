@@ -4,20 +4,19 @@ public class AnimalMain {
 
     public static void main(String[] args) {
 
-        Animal zebra = new Animal();
-        Animal snake = new Animal();
-        Animal chupacabra = new Animal(30,30);
+        Farm farm = new Farm();
 
 
-        zebra.setHunger();
-        snake.setThirst();
-        snake.setPlay();
-        chupacabra.setPlay();
 
-        System.out.println(zebra.hunger);
-        System.out.println(snake.thirst);
-        System.out.println(chupacabra.hunger);
+        farm.animalList.add(new Animal("Zebra",50,50));
+        farm.animalList.add(new Animal("Snake",60,50));
+        farm.animalList.add(new Animal("Chupacabra",70,50));
 
+
+        farm.breed();
+
+
+        System.out.println( farm.getFreeSlots());
 
     }
 }
