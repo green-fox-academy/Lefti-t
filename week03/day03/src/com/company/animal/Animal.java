@@ -2,6 +2,7 @@ package com.company.animal;
 
 public class Animal {
 
+    String name;
     int hunger;
     int thirst;
 
@@ -14,6 +15,7 @@ public class Animal {
     public Animal(String name,int hunger, int thirst) {
         this.hunger = hunger;
         this.thirst = thirst;
+        this.name = name;
     }
 
 
