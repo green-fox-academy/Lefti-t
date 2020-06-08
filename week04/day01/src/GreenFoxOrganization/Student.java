@@ -1,4 +1,4 @@
-package com.company;
+package GreenFoxOrganization;
 
 public class Student extends Person {
 

@@ -1,4 +1,4 @@
-package com.company;
+package GreenFoxOrganization;
 
 import java.util.ArrayList;
 import java.util.List;
