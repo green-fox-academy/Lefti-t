@@ -35,11 +35,11 @@ public class Garden {
 
     public void waterInfo() {
 
-        for (int i = 0; i < garden.size(); i++) {
-            if (garden.get(i).inNeedOfWater()) {
-                System.out.println("This " + garden.get(i).color + " " + garden.get(i).getClass().getSimpleName() + " needs water");
+        for (Plant plant : garden) {
+            if (plant.inNeedOfWater()) {
+                System.out.println("This " + plant.color + " " + plant.getClass().getSimpleName() + " needs water");
             } else {
-                System.out.println("This " + garden.get(i).color + " " + garden.get(i).getClass().getSimpleName() + " is watered");
+                System.out.println("This " + plant.color + " " + plant.getClass().getSimpleName() + " is watered");
             }
 
 
