@@ -2,7 +2,7 @@ package com.company.petrolStation;
 
 public class Station {
 
-    int gasAmount = 10000;
+    int gasAmount;
 
     public Station(int gasAmount) {
         this.gasAmount = gasAmount;

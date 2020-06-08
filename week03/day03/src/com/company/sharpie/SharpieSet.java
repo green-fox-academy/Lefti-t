@@ -6,11 +6,14 @@ public class SharpieSet {
 
 List<Sharpie> sharpieList = new ArrayList<Sharpie>();
 
+    public void addItem(Sharpie sharpie) {
+        this.sharpieList.add(sharpie);
+    }
 
  public int usable(){
      int i=0;
      for (Sharpie sharpie: sharpieList) {
-         if ( sharpie.inkAmount > 0) i++;
+         if ( sharpie.getInkAmount() > 0) i++;
      }
          return i;
      }

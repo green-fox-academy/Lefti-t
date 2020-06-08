@@ -4,21 +4,26 @@ public class Sharpie {
 
     String color;
     Float width;
-    Float inkAmount;
+    private int inkAmount;
 
 
-    public Sharpie(String color, Float width) {
+
+    public Sharpie(String color, Float width, int inkAmount) {
         this.color = color;
         this.width = width;
-        inkAmount = 100f;
+        this.inkAmount = inkAmount;
     }
 
 
     public void use(){
-        inkAmount -= 50;
+       this.inkAmount -= 50;
     }
 
     public void use(int amount){
         inkAmount -= amount;
+    }
+
+    public int getInkAmount() {
+        return this.inkAmount;
     }
 }
