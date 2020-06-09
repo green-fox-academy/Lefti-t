@@ -1,4 +1,11 @@
 package com.modeStringInstruments;
 
-public class Instrument {
+abstract class Instrument {
+
+    protected String name;
+
+
+    public abstract void play();{
+
+    }
 }

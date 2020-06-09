@@ -1,4 +1,11 @@
 package com.modeStringInstruments;
 
-public class numberOfStrings {
+abstract class StringedInstrument extends Instrument {
+
+    int numberOfStrings;
+
+    public abstract String sound();
+
+
+    public abstract void play();
 }
