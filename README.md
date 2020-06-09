@@ -1,1 +1,2 @@
-# Lefti-t
+# Lefti's repository
+## Hi there!
