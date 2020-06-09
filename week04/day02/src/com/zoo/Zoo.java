@@ -20,6 +20,11 @@ public class Zoo {
         crocodile.breed();
         crocodile.crawl();
 
+        Birds stork = new Birds("Stork",9,"male");
+        stork.takeOff();
+        stork.fly();
+        stork.land();
+
 
 
     }

@@ -13,6 +13,11 @@ public abstract class EggHatchers extends Animal {
     }
 
     @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public  void breed() {
         System.out.println( "A " + this.name + " is breeding by laying eggs!");
     }

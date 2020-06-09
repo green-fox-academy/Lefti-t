@@ -1,16 +1,10 @@
-package com.zoo;
+package com.flyable;
 
-import com.flyable.Flyable;
+public class Helicopter  extends  Vehicle implements Flyable{
 
-public class Birds extends  EggHatchers implements Flyable {
 
-    String name;
-    int age;
-    String gender;
-
-    public Birds(String name, int age, String gender) {
-        super(name, age, gender);
-
+    public Helicopter(int speed, int maxAltitude, String name) {
+        super(speed, maxAltitude, name);
     }
 
     @Override
@@ -23,13 +17,8 @@ public class Birds extends  EggHatchers implements Flyable {
         System.out.println("The " + getName() + " is flying!");
     }
 
-
     @Override
     public void takeOff() {
         System.out.println("The " + getName() + " has took off!");
     }
-
-
-
-
 }
