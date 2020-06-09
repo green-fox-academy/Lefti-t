@@ -1,4 +1,4 @@
 # Lefti's repository
 ## Hi there!
-Feel free to check my code..
+Feel free to check my code..\n
 Cya!
