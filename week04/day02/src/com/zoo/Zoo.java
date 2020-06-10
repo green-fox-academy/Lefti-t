@@ -8,23 +8,22 @@ public class Zoo {
     public static void main(String[] args) {
 
 
-
-        Mammals monkey = new Mammals("Monkey",5,"male");
+        Mammals monkey = new Mammals("Monkey", 5, "male");
         monkey.feeding();
         monkey.breed();
 
-        EggHatchers snake = new Reptiles("Snake", 3,"female");
+        EggHatchers snake = new Reptiles("Snake", 3, "female");
         snake.breed();
 
-        Reptiles crocodile = new Reptiles("Crocodile",12,"female");
+        Reptiles crocodile = new Reptiles("Crocodile", 12, "female");
         crocodile.breed();
         crocodile.crawl();
 
-        Birds stork = new Birds("Stork",9,"male");
+        Birds stork = new Birds("Stork", 9, "male");
         stork.takeOff();
         stork.fly();
         stork.land();
-
+        stork.breed();
 
 
     }

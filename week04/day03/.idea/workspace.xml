@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4960aa0-56a2-424a-9e7c-941d7d4e14fd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../google-gf-checks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day02/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day02/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day03.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Domino.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Printable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/printable/ToDo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day02/day02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/day02.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day02/src/com/zoo/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/src/com/zoo/Zoo.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1d7V4nj2D2K3Hvnk86oPaR8x2lF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.printable.Main" />
+      <module name="day03" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4960aa0-56a2-424a-9e7c-941d7d4e14fd" name="Default Changelist" comment="" />
+      <created>1591775929039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591775929039</updated>
+      <workItem from="1591775935652" duration="1779000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser" timestamp="1591776449217">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1591776449217" />
+    <state width="1741" height="384" key="GridCell.Tab.0.bottom" timestamp="1591777342138">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1741" height="384" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
+    <state width="1741" height="384" key="GridCell.Tab.0.center" timestamp="1591777342138">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1741" height="384" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
+    <state width="1741" height="384" key="GridCell.Tab.0.left" timestamp="1591777342138">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1741" height="384" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
+    <state width="1741" height="384" key="GridCell.Tab.0.right" timestamp="1591777342138">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1741" height="384" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
+  </component>
+</project>
