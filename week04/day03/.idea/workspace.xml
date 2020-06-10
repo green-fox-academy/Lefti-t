@@ -20,25 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4960aa0-56a2-424a-9e7c-941d7d4e14fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../google-gf-checks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day02/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day02/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day03.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Domino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/printable/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/printable/ToDo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/day02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/day02.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day02/src/com/zoo/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day02/src/com/zoo/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reservations/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reservations/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reservations/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reservations/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reservations/Reservationy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reservations/Reservationy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +52,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="reservations.Main" />
+      <module name="day03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="reservations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.printable.Main" />
       <module name="day03" />
@@ -78,8 +76,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -94,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591775929039</updated>
-      <workItem from="1591775935652" duration="1779000" />
+      <workItem from="1591775935652" duration="10842000" />
     </task>
     <servers />
   </component>
@@ -113,25 +116,29 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser" timestamp="1591776449217">
+    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser" timestamp="1591783091555">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1591776449217" />
-    <state width="1741" height="384" key="GridCell.Tab.0.bottom" timestamp="1591777342138">
+    <state x="705" y="426" key="#com.intellij.ide.util.MemberChooser/0.0.3440.1400@0.0.3440.1400" timestamp="1591783091555" />
+    <state width="1741" height="384" key="GridCell.Tab.0.bottom" timestamp="1591789551113">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1741" height="384" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
-    <state width="1741" height="384" key="GridCell.Tab.0.center" timestamp="1591777342138">
+    <state width="1741" height="384" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1591789551113" />
+    <state width="1741" height="384" key="GridCell.Tab.0.center" timestamp="1591789551113">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1741" height="384" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
-    <state width="1741" height="384" key="GridCell.Tab.0.left" timestamp="1591777342138">
+    <state width="1741" height="384" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1591789551113" />
+    <state width="1741" height="384" key="GridCell.Tab.0.left" timestamp="1591789551113">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1741" height="384" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
-    <state width="1741" height="384" key="GridCell.Tab.0.right" timestamp="1591777342138">
+    <state width="1741" height="384" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1591789551113" />
+    <state width="1741" height="384" key="GridCell.Tab.0.right" timestamp="1591789551113">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state width="1741" height="384" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1591777342138" />
+    <state width="1741" height="384" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1591789551113" />
+    <state x="563" y="349" width="672" height="678" key="search.everywhere.popup" timestamp="1591784445627">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="563" y="349" width="672" height="678" key="search.everywhere.popup/0.0.3440.1400@0.0.3440.1400" timestamp="1591784445627" />
   </component>
 </project>
