@@ -1,4 +1,4 @@
-package com.company;
+package com.company.postIt;
 
 import java.awt.*;
 

@@ -12,13 +12,13 @@ public class Reservation implements Reservationy {
 
     public Reservation() {
 
-
-        String [] randomDay = new String[]{"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
+        //random 3 char day
+        String[] randomDay = new String[]{"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
         int idx = new Random().nextInt(randomDay.length);
         String random = (randomDay[idx]);
         this.reservationDay = random.substring(0, 3).toUpperCase();
 
-
+        //random 8 char code A-Z
         int leftLimit = 48; // numeral '0'
         int rightLimit = 122; // letter 'z'
         int targetStringLength = 8;

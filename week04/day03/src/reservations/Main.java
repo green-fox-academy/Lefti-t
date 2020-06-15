@@ -9,10 +9,9 @@ public class Main {
 
         List<Reservation> reservations = new ArrayList();
 
-        for (int i = 0; i < 10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             reservations.add(new Reservation());
         }
-
 
 
         for (Reservation reservation : reservations) {
