@@ -26,8 +26,8 @@ public class functions {
 
 
         //   that returns it's input's factorial
-        int number = 4;
-
+       // int number = 4;
+        System.out.println(factorio(5));
     }
 
 
@@ -76,11 +76,16 @@ public class functions {
     //   that returns it's input's factorial
 
 
-    public static void factorio(int number) {
-        int number = i;
-        for (i = 2; i <= number; i++)
-            result *= i;
-        System.out.println("Factorial of " + number + " is " + result);
+    public static int factorio(int number) {
+        int num = (int) number;
+        int result=1;
+        int i = 1;
+        for (i = 1; i <= num; i++) {
+            result = result * i;
+
+        }
+
+        return result;
     }
 
 
@@ -94,12 +99,12 @@ public class functions {
     //System.out.println(subInt(9, new int[] {1, 11, 34, 52, 61}));
     //  should print: '[]'
 
-    
-    public static void h (int number, int[] j){
-        
-        
+
+    public static void h(int number, int[] j) {
+
+
     }
-    
+
 }
 
 

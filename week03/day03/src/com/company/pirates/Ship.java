@@ -11,6 +11,7 @@ public class Ship {
     public String shipName;
 
     public Ship(String shipName) {
+
         this.shipName=shipName;
     }
 
