@@ -2,8 +2,8 @@ package com.company.printable;
 
 public class Domino implements Printable{
 
-    int A ;
-    int B;
+   private int A ;
+    private int B;
 
     public Domino(int a, int b) {
         A = a;

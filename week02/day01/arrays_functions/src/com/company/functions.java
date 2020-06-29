@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.Arrays;
+
 public class functions {
 
 
@@ -26,8 +28,13 @@ public class functions {
 
 
         //   that returns it's input's factorial
-       // int number = 4;
+        // int number = 4;
         System.out.println(factorio(5));
+
+
+        System.out.println(bubble(new int[]{34, 12, 24, 9, 5}));
+        //  should print [5, 9, 12, 24, 34]
+
     }
 
 
@@ -78,7 +85,7 @@ public class functions {
 
     public static int factorio(int number) {
         int num = (int) number;
-        int result=1;
+        int result = 1;
         int i = 1;
         for (i = 1; i <= num; i++) {
             result = result * i;
@@ -89,22 +96,25 @@ public class functions {
     }
 
 
-    //  Create a function that takes a number and an array of integers as a parameter
-    //  Returns the indices of the integers in the array of which the first number is a part of
-    //  Or returns an empty array if the number is not part of any of the integers in the array
+    public static  String bubble(int[] arr) {
 
-    //  Example:
-    //    System.out.println(subInt(1, new int[] {1, 11, 34, 52, 61}));
-    //  should print: `[0, 1, 4]`
-    //System.out.println(subInt(9, new int[] {1, 11, 34, 52, 61}));
-    //  should print: '[]'
+        int temp = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < (arr.length - i); j++) {
+                if (arr[j - 1] > arr[j]) {
 
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
 
-    public static void h(int number, int[] j) {
-
-
+        return Arrays.toString(arr);
     }
 
 }
+
+
 
 
