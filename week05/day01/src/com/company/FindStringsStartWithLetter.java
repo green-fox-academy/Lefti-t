@@ -15,7 +15,7 @@ public class FindStringsStartWithLetter {
 
         Stream<String> s = cities.stream()
                 .filter(city -> city.startsWith("L"));
-        
+
         System.out.println(s.collect(Collectors.toList()));
 
     }
