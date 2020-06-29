@@ -5,7 +5,14 @@ public class FindUppercaseChars {
 
 //Write a Stream Expression to find the uppercase characters in a string!
 
-        String s = "Hello There!";
+        String s = "Hello There!"
+                .chars()
+                .filter(Character::isUpperCase)
+                .collect(StringBuilder::new,
+                        StringBuilder::appendCodePoint,
+                        StringBuilder::append)
+                .toString();
+        System.out.println("The uppercase characters are " + s);
 
 
 
