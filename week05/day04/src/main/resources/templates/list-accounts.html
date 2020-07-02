@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 <table class="table table-hover">
@@ -16,11 +17,19 @@
     </tr>
     </thead>
     <tr th:each="account:${accounts}">
-         <td th:text="${account.name}"></td>
-        <td th:text="${account.getBalance()}"></td>
-        <td th:text="${account.animalType}"></td>
-        <td th:text="${accountStat.count}"></td>
-        <td th:utext="${account.isKing()}
+        <div th:if="${account.isKing()}">
+            <td th:utext="'<b>' + ${account.name}+ '<b>'"></td>
+            <td th:utext="'<b>' + ${account.getBalance()}+ '<b>'"></td>
+            <td th:utext="'<b>' + ${account.animalType}+ '<b>'"></td>
+            <td th:utext="'<b>' + ${accountStat.count}+ '<b>'"></td>
+        </div>
+
+        <div th:unless="${account.isKing()}">
+            <td th:text="${account.name}"></td>
+            <td th:text="${account.getBalance()}"></td>
+            <td th:text="${account.animalType}"></td>
+            <td th:text="${accountStat.count}"></td>
+        </div>
     </tr>
 </table>
 </body>
