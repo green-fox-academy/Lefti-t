@@ -36,4 +36,18 @@ public class BikeShopController {
         model.addAttribute("avg",bikeList.getAvgStock());
         return "average-stock";
     }
+
+
+    @GetMapping("contains-bike")
+    public String displayContainsMtb(Model model){
+        model.addAttribute("bikeList",bikeList.getContainsBike());
+        return "contains-bike";
+    }
+
+    @GetMapping("most-expensive")
+    public String displayMostExpensive(Model model){
+        model.addAttribute("bikeList",bikeList.getMostExpensive());
+        return "most-expensive";
+    }
+
 }

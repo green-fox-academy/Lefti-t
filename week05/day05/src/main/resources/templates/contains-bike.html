@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
+    </style>
+</head>
+<body>
+<header>
+    <h1 id="logo">Best Bikeshop. ever</h1>
+
+</header>
+<nav>
+    <div><a href="/in-stock/">In Stock</a>
+        <a href="/cheapest-first/">Sort by cheapest</a>
+        <a href="/contains-bike/">contains mtb</a>
+        <a href="/average-stock/">Average stock</a>
+        <a href="/most-expensive/">Most expensive bike</a>
+    </div>
+    <div>
+        <form class="search" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+
+    <tr th:each="bike:${bikeList}">
+        <td th:text="${bike.name}"></td>
+        <td th:text="${bike.getDescription()}"></td>
+        <td th:text="${bike.getPrice()}"></td>
+        <td th:text="${bike.getQuantityOfStock()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

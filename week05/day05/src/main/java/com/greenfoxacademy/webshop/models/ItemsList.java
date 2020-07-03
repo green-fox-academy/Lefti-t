@@ -48,4 +48,19 @@ public class ItemsList {
                 .collect(Collectors.averagingInt(ShopItems::getQuantityOfStock));
 
     }
+
+    public List<ShopItems> getContainsBike() {
+        List<ShopItems> containsBike = itemsList.stream()
+                .filter(s -> s.getDescription().contains("mtb"))
+                .collect(Collectors.toList());
+        return containsBike;
+    }
+
+    public ShopItems getMostExpensive() {
+        List<ShopItems> mostExpensive = itemsList.stream()
+        .sorted((ShopItems s1, ShopItems s2) -> (int) (s2.getPrice() - s1.getPrice()))
+                .collect(Collectors.toList());
+
+        return mostExpensive.get(0);
+    }
 }
