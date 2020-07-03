@@ -23,9 +23,8 @@ public class ShopItems {
         return description;
     }
 
-    public String getPrice() {
-        String formattedPrice = String.format("%.02f", price);
-        return formattedPrice + " Kc";
+    public double getPrice() {
+        return price ;
     }
 
     public int getQuantityOfStock() {

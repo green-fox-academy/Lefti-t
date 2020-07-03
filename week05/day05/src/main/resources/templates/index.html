@@ -2,13 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thymeleaf Exercise #</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+
     <meta charset="utf-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
+    </style>
 </head>
 <body>
-<table></table>
+<header>
+    <h1 id="logo">Best Bikeshop. ever</h1>
+
+</header>
+<nav>
+    <div><a href="/in-stock/">In Stock</a>
+        <a href="/cheapest-first/">Sort by cheapest</a>
+        <a href="/contains-bike/">contains mtb</a>
+        <a href="/average-stock/">Average stock</a>
+        <a href="/most-expensive/">Most expensive bike</a>
+    </div>
+    <div>
+        <form class="search" action="action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</nav>
 <table class="table table-hover">
     <thead>
     <tr>

@@ -1,21 +1,22 @@
 package com.greenfoxacademy.webshop.models;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ItemsList {
 
     List<ShopItems> itemsList;
 
 
-
-    public ItemsList(){
+    public ItemsList() {
         itemsList = new ArrayList<>();
-        itemsList.add(new ShopItems("Road bike","Carbon road bike with 24 gears",20000,2));
-        itemsList.add(new ShopItems("City bike","Alu city bike with 8 gears",12000,5));
-        itemsList.add(new ShopItems("Mountain bike","Alu full suspension mtb with 12 gears",24000,1));
-        itemsList.add(new ShopItems("Downhill bike","Carbon downhill bike with 9 gears",34000,2));
-        itemsList.add(new ShopItems("Kids bike","Alu kids bike for ages 5-8",3500,6));
+        itemsList.add(new ShopItems("Road bike", "Carbon road bike with 24 gears", 20000, 2));
+        itemsList.add(new ShopItems("City bike", "Alu city bike with 8 gears", 12000, 5));
+        itemsList.add(new ShopItems("Mountain bike", "Alu full suspension mtb with 12 gears", 24000, 0));
+        itemsList.add(new ShopItems("Downhill bike", "Carbon downhill mtb bike with 9 gears", 34000, 2));
+        itemsList.add(new ShopItems("Kids bike", "Alu kids bike for ages 5-8", 3500, 6));
     }
 
     public List<ShopItems> getItemsList() {
@@ -24,5 +25,27 @@ public class ItemsList {
 
     public void setItemsList(List<ShopItems> itemsList) {
         this.itemsList = itemsList;
+    }
+
+
+    public List<ShopItems> getInStockList() {
+        List<ShopItems> inStock = itemsList.stream()
+                .filter(n -> n.getQuantityOfStock() > 0)
+                .collect(Collectors.toList());
+
+        return inStock;
+    }
+
+    public List<ShopItems> getCheapestFirst() {
+        List<ShopItems> cheapestFirst = itemsList.stream()
+                .sorted(Comparator.comparingDouble(ShopItems::getPrice))
+                .collect(Collectors.toList());
+        return cheapestFirst;
+    }
+
+    public Double getAvgStock() {
+        return itemsList.stream()
+                .collect(Collectors.averagingInt(ShopItems::getQuantityOfStock));
+
     }
 }
