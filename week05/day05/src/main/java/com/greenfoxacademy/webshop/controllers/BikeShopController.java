@@ -49,7 +49,7 @@ public class BikeShopController {
     @GetMapping("most-expensive")
     public String displayMostExpensive(Model model){
         model.addAttribute("bikeList",bikeList.getMostExpensive());
-        return "most-expensive";
+        return "index";
     }
 
     @PostMapping("search")
