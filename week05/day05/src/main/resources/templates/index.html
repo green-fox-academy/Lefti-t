@@ -22,7 +22,7 @@
         <a href="/most-expensive/">Most expensive bike</a>
     </div>
     <div>
-        <form class="search" action="action_page.php">
+        <form action="search" class="search" method="post">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit">Search</button>
         </form>
@@ -41,7 +41,7 @@
     <tr th:each="bike:${bikeList}">
         <td th:text="${bike.name}"></td>
         <td th:text="${bike.getDescription()}"></td>
-        <td th:text="${bike.getPrice()}"></td>
+        <td th:text="${bike.getPrice()} + ' Kc'"></td>
         <td th:text="${bike.getQuantityOfStock()}"></td>
     </tr>
 </table>

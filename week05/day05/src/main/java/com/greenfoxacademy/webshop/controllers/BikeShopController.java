@@ -4,6 +4,8 @@ import com.greenfoxacademy.webshop.models.ItemsList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BikeShopController {
@@ -50,4 +52,10 @@ public class BikeShopController {
         return "most-expensive";
     }
 
+    @PostMapping("search")
+    public String displayResult( Model model, @RequestParam String search){
+        model.addAttribute("bikeList",bikeList.getSearchResult(search));
+        return "index";
+
+    }
 }

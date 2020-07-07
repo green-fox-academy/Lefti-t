@@ -17,30 +17,33 @@
 <nav>
     <div><a href="/in-stock/">In Stock</a>
         <a href="/cheapest-first/">Sort by cheapest</a>
-        <a href="/contains-bike/">contains mtb</a>
+        <a href="/contains-bike/">Contains mtb</a>
         <a href="/average-stock/">Average stock</a>
         <a href="/most-expensive/">Most expensive bike</a>
     </div>
     <div>
-        <form action="/search" class="search" method="post"  >
+        <form action="search" class="search" method="post"  >
             <input type="text" placeholder="Search.." name="search">
             <button type="submit" >Search</button>
         </form>
     </div>
 </nav>
-
-
 <table class="table table-hover">
     <thead>
     <tr>
-        <th>Average Stock</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
     </tr>
     </thead>
 
-    <td th:utext="'Average stock: '+${avg}">
-        /td>
-
-
+    <tr th:each="bike:${bikeList}">
+        <td th:text="${bike.name}"></td>
+        <td th:text="${bike.getDescription()}"></td>
+        <td th:text="${bike.getPrice()}"></td>
+        <td th:text="${bike.getQuantityOfStock()}"></td>
+    </tr>
 </table>
 
 </body>

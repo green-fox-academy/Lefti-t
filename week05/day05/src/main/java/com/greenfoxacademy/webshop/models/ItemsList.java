@@ -51,16 +51,24 @@ public class ItemsList {
 
     public List<ShopItems> getContainsBike() {
         List<ShopItems> containsBike = itemsList.stream()
-                .filter(s -> s.getDescription().contains("mtb"))
+                .filter(s -> s.getDescription().contains("mtb".toLowerCase()))
                 .collect(Collectors.toList());
         return containsBike;
     }
 
     public ShopItems getMostExpensive() {
         List<ShopItems> mostExpensive = itemsList.stream()
-        .sorted((ShopItems s1, ShopItems s2) -> (int) (s2.getPrice() - s1.getPrice()))
+        .sorted((ShopItems i1, ShopItems i2) -> (int) (i2.getPrice() - i1.getPrice()))
                 .collect(Collectors.toList());
 
         return mostExpensive.get(0);
+    }
+
+
+    public List<ShopItems> getSearchResult(String text) {
+        return this.itemsList.stream()
+                .filter(s -> s.getDescription().toLowerCase().contains(text.toLowerCase()) ||
+                        s.getName().toLowerCase().contains(text.toLowerCase()))
+                .collect(Collectors.toList());
     }
 }
