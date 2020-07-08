@@ -11,8 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DiApplication implements CommandLineRunner {
 
     @Autowired
-    private Printer printer;
-    @Autowired
     private YellowColor yellow;
 
     public static void main(String[] args) {
@@ -21,8 +19,6 @@ public class DiApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        printer.log("BRRRRRRR");
-        printer.printColor();
         yellow.printColor();
     }
 

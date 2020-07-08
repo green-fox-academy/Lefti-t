@@ -1,0 +1,14 @@
+a {
+    background-color: #3e94ec;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 23px;
+}
+
+a:hover {
+    color: darkcyan;
+}
