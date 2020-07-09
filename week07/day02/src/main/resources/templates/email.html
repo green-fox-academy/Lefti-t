@@ -4,6 +4,7 @@
     <title>Thymeleaf Exercise #</title>
 
     <meta charset="utf-8"/>
+    <title>Email</title>
     <link rel="stylesheet" href="/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
@@ -11,18 +12,12 @@
 </head>
 
 <body>
-<nav>
-    <div><a href="/useful">Useful</a>
-        <a href="/useful/colored">Colored</a>
-        <a href="/useful/email">Email</a>
-
-
-    </div>
+<div th:insert="fragments :: nav"></div>
 
 <div>
-    <p>th:text="'email:'+ ${email} + ';'"</p>
+    <h1 th:style="|color: ${color}|" th:text= "${text}"> </h1>
 </div>
-</nav>
+
 
 
 </body>

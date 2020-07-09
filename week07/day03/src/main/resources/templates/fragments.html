@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragments</title>
+</head>
+<body>
+
+<nav th:fragment="nav">
+    <div>
+        <span th:text="'GreenFox Students: ' + ${count}"></span>
+        <a href="/gfa">GFA</a>
+        <a href="/gfa/list">Students</a>
+        <a href="/gfa/add">Add Students</a>
+    </div>
+
+</nav>
+</body>
+</html>

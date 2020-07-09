@@ -1,13 +1,11 @@
 package com.greenfoxacademy.di.usefullUtilities;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import java.util.regex.Pattern;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Stream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class UtilityService {
@@ -43,14 +41,8 @@ public class UtilityService {
         return result;
     }
 
-    public String validateEmail(String email){
-        if( email.contains("@") && email.contains(".")) {
-            return "This is a valid email.";
-        }else {
-            return "This is an invalid email";
-        }
-
-
-
+    public boolean validateEmail(String email){
+        return email.contains("@") && email.contains(".");
     }
+
 }
