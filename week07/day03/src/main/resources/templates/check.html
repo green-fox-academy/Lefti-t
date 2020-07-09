@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+
+    <meta charset="utf-8"/>
+    <title>GFA</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
+    </style>
+</head>
+<body>
+<div th:insert="fragments :: nav"></div>
+<form th:action="@{/gfa/checked}" class="add" th:method="POST">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit" >Search</button>
+</form>
+</body>
+</html>

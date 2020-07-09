@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StudentService {
@@ -32,5 +33,11 @@ public class StudentService {
 
     public String count() {
         return String.valueOf(names.size());
+    }
+
+    public List<String> checkResults(String text) {
+        return this.names.stream()
+                .filter(s -> s.toLowerCase().contains(text.toLowerCase()))
+                .collect(Collectors.toList());
     }
 }

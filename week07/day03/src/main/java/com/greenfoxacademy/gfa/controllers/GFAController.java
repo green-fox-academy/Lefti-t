@@ -14,22 +14,22 @@ public class GFAController {
     StudentService studentList = new StudentService();
 
     @GetMapping("/gfa")
-    public String mainPage(Model model){
-        model.addAttribute("count",studentList.count());
+    public String mainPage(Model model) {
+        model.addAttribute("count", studentList.count());
         return "index";
     }
 
 
     @GetMapping("/gfa/list")
-    public String listStudents(Model model){
-        model.addAttribute("list",studentList.findAll());
-        model.addAttribute("count",studentList.count());
+    public String listStudents(Model model) {
+        model.addAttribute("list", studentList.findAll());
+        model.addAttribute("count", studentList.count());
         return "list";
     }
 
     @GetMapping("/gfa/add")
-    public String addStudent(Model model){
-        model.addAttribute("count",studentList.count());
+    public String addStudent(Model model) {
+        model.addAttribute("count", studentList.count());
         return "add";
     }
 
@@ -40,4 +40,18 @@ public class GFAController {
         this.studentList.save(newStudent);
         return "saved";
     }
+
+    @GetMapping("/gfa/check")
+    public String check(Model model) {
+        model.addAttribute("count", studentList.count());
+        return "check";
+    }
+
+    @PostMapping("/gfa/checked")
+    public String checked(Model model, @RequestParam  String search) {
+        model.addAttribute("checked", studentList.checkResults(search));
+        model.addAttribute("count", studentList.count());
+        return "checked";
+    }
+
 }
