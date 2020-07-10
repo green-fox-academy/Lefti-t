@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class FoxController {
+public class FoxMainController {
 
     @Autowired
     private FoxListService foxList;
@@ -36,13 +36,4 @@ public class FoxController {
     }
 
 
-    @GetMapping("/nutritionStore")
-    public String nutritionStore(Model model, String newFood, String newDrink, @RequestParam String name) {
-        model.addAttribute("foxFood", foxList.findFoxName(name).getFood());
-        model.addAttribute("foxDrink", foxList.findFoxName(name).getDrink());
-        return "nutritionStore";
-    }
-    @PostMapping("/nutrition")
-        model.addAttribute("newFoxFood",foxList.findFoxName(name).setFood(newFood));
-        model.addAttribute("newFoxDrink",foxList.findFoxName(name).setDrink(newDrink));
 }

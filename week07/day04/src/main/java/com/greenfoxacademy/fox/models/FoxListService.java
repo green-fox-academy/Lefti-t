@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class FoxListService {
@@ -25,4 +27,12 @@ public class FoxListService {
     return     foxes.stream().filter(s -> s.getName().toLowerCase().equals(name.toLowerCase())).findFirst().orElse(null);
 
     }
+    public List<String> getFoodTypes(){
+        return Stream.of(Food.meals.values()).map(Enum::name).map(String::toLowerCase).collect(Collectors.toList());
+    }
+
+    public List<String> getDrinkTypes(){
+        return Stream.of(Drink.drinks.values()).map(Enum::name).map(String::toLowerCase).collect(Collectors.toList());
+    }
+
 }

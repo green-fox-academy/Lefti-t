@@ -3,6 +3,8 @@ package com.greenfoxacademy.fox.models;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Fox {
     private String name;
@@ -41,7 +43,7 @@ public class Fox {
     }
 
     public String getFood() {
-        return food;
+        return this.food;
     }
 
     public void setFood(String food) {
@@ -55,4 +57,6 @@ public class Fox {
     public void setDrink(String drink) {
         this.drink = drink;
     }
+
+
 }
