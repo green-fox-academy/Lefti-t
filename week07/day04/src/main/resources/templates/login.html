@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
+    </style>
+</head>
+<body>
+<div><img src="/greenfox.png"></div>
+<div><h1>Welcome to Programmer Fox Club.</h1></div>
+<div><p>Please provide a name, so you can associate it to your pet.</p></div>
+
+<form th:action="@{/}" method="POST">
+    <label for="foxName">Name</label>
+    <input id="foxName" type="text" name="foxName" autofocus placeholder="Enter name...">
+    <input type="submit" value="Go">
+
+</form>
+</form>
+</body>
+</html>
