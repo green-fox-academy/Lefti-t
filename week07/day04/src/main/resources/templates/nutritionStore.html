@@ -13,16 +13,29 @@
 <body>
 
 
-    <div th:insert="fragments :: nav"></div>
+<div th:insert="fragments :: nav"></div>
+<div><img src="/greenfox.png"></div>
+<div th:text="|This is ${foxName}. Currently living on ${currentFood} and ${currentDrink}.|"></div>
 
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
+<form th:action="@{/nutritionNew}" th:method="POST">
+<div class="food" th:object="${foxFood}">
+    <select class="form-control" id="food" name="foodList">
+        <option value="">Select Food</option>
+        <option th:each="food : ${foxFood}"
+                th:value="${food}"
+                th:text="${food}"></option>
+    </select>
+</div>
+<div class="drink" th:object="${foxDrink}">
+    <select class="form-control" id="drink" name="drinkList">
+        <option value="">Select Drink</option>
+        <option th:each="drink : ${foxDrink}"
+                th:value="${drink}"
+                th:text="${drink}"></option>
+    </select>
+    <input type="submit" value="Change">
+</form>
+</div>
 
 </body>
 </html>

@@ -1,10 +1,7 @@
 package com.greenfoxacademy.fox.models;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Fox {
     private String name;
@@ -14,7 +11,7 @@ public class Fox {
 
     public Fox(String name, List<String> trickList, String food, String drink) {
         this.name = name;
-        this.trickList= trickList;
+        this.trickList = trickList;
         this.food = food;
         this.drink = drink;
     }

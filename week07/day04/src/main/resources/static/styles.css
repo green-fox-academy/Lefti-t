@@ -4,8 +4,18 @@ body {
     margin-right: auto;
     font-family: 'PT Sans', sans-serif;
 }
+
 a {
     padding: 10px;
     text-decoration: none;
+
+}
+
+.food {
+    margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.link {
+    margin-bottom: 10px;
 }
