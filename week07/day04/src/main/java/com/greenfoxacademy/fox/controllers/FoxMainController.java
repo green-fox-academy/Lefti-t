@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FoxMainController {
 
-    @Autowired
-    private FoxListService foxList;
+    private final FoxListService foxList;
+
+    public FoxMainController(FoxListService foxList) {
+        this.foxList = foxList;
+    }
 
 
     @GetMapping("/login")

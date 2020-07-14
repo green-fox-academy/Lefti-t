@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add new todo</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/6ef7907cc3.js"></script>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<body>
+<h1>Add new todo</h1>
+<form action="#" method="post" th:action="@{/todo}" th:object="${todo}">
+    <input autofocus required th:field="*{title}" type="text">
+    <input th:field="*{isUrgent}" type="checkbox">
+    <input type="submit" value="Add todo">
+</form>
+
+</body>
+</html>

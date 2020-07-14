@@ -4,7 +4,7 @@
     <title>Thymeleaf Exercise #</title>
 
     <meta charset="utf-8"/>
-    <title>Fox</title>
+    <title>Nutrition Store</title>
     <link rel="stylesheet" href="/styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&display=swap');
@@ -17,7 +17,7 @@
 <div><img src="/greenfox.png"></div>
 <div th:text="|This is ${foxName}. Currently living on ${currentFood} and ${currentDrink}.|"></div>
 
-<form th:action="@{/nutritionNew}" th:method="POST">
+<form th:action="@{/nutritionNew(name=${foxName})}" th:method="POST">
 <div class="food" th:object="${foxFood}">
     <select class="form-control" id="food" name="foodList">
         <option value="">Select Food</option>

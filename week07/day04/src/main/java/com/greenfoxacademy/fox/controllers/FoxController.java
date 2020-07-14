@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FoxController {
-    @Autowired
-    private FoxListService foxList;
+    private final FoxListService foxList;
+
+    public FoxController(FoxListService foxList) {
+        this.foxList = foxList;
+    }
 
 
     @GetMapping("/nutritionStore")
