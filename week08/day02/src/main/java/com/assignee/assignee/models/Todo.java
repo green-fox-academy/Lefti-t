@@ -16,7 +16,7 @@ public class Todo {
     private boolean done;
 
 
-    public Todo(Long id, String title, boolean urgent, boolean done) {
+    public Todo( String title, boolean urgent, boolean done) {
         this.id = id;
         this.title = title;
         this.urgent = urgent;

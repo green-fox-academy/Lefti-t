@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Controller
 @RequestMapping("/todo")
@@ -44,17 +44,16 @@ public class TodoController {
 
     @PostMapping("/add-todo")
     public String saveTodo(@ModelAttribute Todo todo) {
-        toDoService.save(todo);
+        toDoService.save(todo.getTitle());
         return "redirect:/todo/list";
     }
 
 
-    @PostMapping("search")
-    public String displayResult(Model model, @RequestParam String search) {
-        List<Todo> todos = toDoService.findAll().stream().filter(s -> s.getTitle().toLowerCase()
-                .contains(search)).collect(Collectors.toList());
-        model.addAttribute("todos", todos);
-        return "todolist";
-
+    @GetMapping("/search")
+    public String search(Model model, @RequestParam String search) {
+        if (search != null) {
+            model.addAttribute("todos", toDoService.search(search));
+            return "todolist";
+        } else return "redirect:/todo/list";
     }
 }

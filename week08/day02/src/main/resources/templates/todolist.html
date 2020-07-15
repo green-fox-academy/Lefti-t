@@ -9,7 +9,7 @@
 <body>
 
 <div>
-    <form action="/todo/search" class="search" method="post">
+    <form th:action="@{/todo/search}"  method="GET">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit">Search</button>
     </form>
