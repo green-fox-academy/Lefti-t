@@ -56,7 +56,6 @@ public class ToDoServiceImp implements ToDoService {
         return this.iToDoRepository
                 .findAll()
                 .stream()
-                .peek(System.out::println)
                 .filter(s -> s.getTitle().toLowerCase().contains(search.toLowerCase()))
                  .collect(Collectors.toList());
     }
