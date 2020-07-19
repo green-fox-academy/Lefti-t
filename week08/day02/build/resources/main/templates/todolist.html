@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <form th:action="@{/todo/search}"  method="GET">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Search</button>
+    </form>
+
+    <h1>Add new todo</h1>
+    <form  method="POST" th:action="@{/todo/add-todo}" th:object="${todo}">
+        <input autofocus required  type="text" name="title">
+        <input type="submit" value="Add todo">
+    </form>
+
+</div>
+<a href="/todo/">Back to main</a>
+<h6>or back to :</h6>
+<a href="/todo/assigneelist">Assignee List</a>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Urgent</th>
+        <th>Done</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Assignee</th>
+    </tr>
+    </thead>
+
+    <tr th:each="todo:${todos}">
+        <td th:utext="${todo.getId()}"></td>
+        <td th:utext="${todo.getTitle()}"></td>
+        <td th:utext="${todo.isUrgent()}"></td>
+        <td th:utext="${todo.isDone()}"></td>
+        <td><a th:href="@{|/todo/edit-todo/${todo.id}/|}">Edit</a></td>
+        <td><a th:href="@{|/todo/delete-todo/${todo.id}/|}">Delete</a></td>
+        <div th:if="${todo.assignee == null}">
+            <td>not assigned</td>
+        </div>
+        <div th:unless="${todo.assignee == null}">
+            <td><a th:href="@{|/todo/${todo.assignee.id}/|}">
+                <div th:utext="${todo.assignee.name}"/></a></td>
+        </div>
+
+    </tr>
+</table>
+</body>
+</html>
