@@ -1,5 +1,8 @@
 package com.api.frontend.models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Greeter {
 
     private String name;
@@ -28,4 +31,6 @@ public class Greeter {
     public void setTitle(String title) {
         this.title = title;
     }
+
+
 }

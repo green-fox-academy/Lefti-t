@@ -1,6 +1,7 @@
 package com.api.frontend.controllers;
 
 import com.api.frontend.models.Doubling;
+import com.api.frontend.models.Greeter;
 import com.api.frontend.services.GreeterService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,8 @@ import java.util.Map;
 @RestController
 public class APIController {
 
+    GreeterService greeterService = new GreeterService();
+    Greeter greeter = new Greeter();
 
     @GetMapping("/doubling")
     @ResponseStatus(HttpStatus.OK)
@@ -29,7 +32,6 @@ public class APIController {
 
     @GetMapping("/greeter")
     public Object greeter(@RequestParam(required = false) String name, @RequestParam(required = false) String title,  HttpServletResponse response) {
-        GreeterService greeterService = new GreeterService();
-        return greeterService.getGreeting();
+        return  greeterService.getGreeting(name,title,response);
     }
 }
