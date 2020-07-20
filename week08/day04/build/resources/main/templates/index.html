@@ -29,7 +29,7 @@
             <tbody>
             <tr th:each="post : ${post}" th:object="${post}">
                 <td th:utext="${post.getVoteCount()}"></td>
-                <td><a th:href="${'/upvote'}">+</a></td>
+                <td><a th:href="@{|index/upvote/${post.id}/|}">+</a></td>
                 <td><a th:href="${'/downvote'}">-</a></td>
                 <td th:utext="${post.getTitle()}"></td>
 

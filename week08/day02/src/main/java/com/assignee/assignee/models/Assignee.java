@@ -1,17 +1,33 @@
+
 package com.assignee.assignee.models;
 
-public class Assignee {
+import javax.persistence.*;
+import java.util.List;
 
+@Entity
+public class Assignee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
 
+    @OneToMany(mappedBy = "assignee")
+    private List<Todo> todos;
 
-    public Assignee(String name, String email) {
+    public Assignee(Long id, String name, String email) {
+        this.id = id;
         this.name = name;
         this.email = email;
     }
 
     public Assignee() {
+
+    }
+
+    public Assignee(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
     public String getName() {
@@ -29,4 +45,16 @@ public class Assignee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public List<Todo> getToDos() { return todos; }
+    public void setToDos(List<Todo> todos) { this.todos = todos; }
 }
+

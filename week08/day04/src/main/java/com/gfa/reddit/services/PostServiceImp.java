@@ -18,8 +18,8 @@ public class PostServiceImp implements  PostService{
     }
 
     @Override
-    public void upVote(Long id) {
-        Post post = new Post();
+    public void upVote(Long id, String title, String url) {
+        Post post = new Post(title,url);
         post.setId(id);
         post.setVoteCount(+1);
         this.postRepository.save(post);
@@ -42,6 +42,11 @@ public class PostServiceImp implements  PostService{
     @Override
     public List<Post> getPosts() {
         return postRepository.findAll();
+    }
+
+    @Override
+    public Post getPost(Long id) {
+        return postRepository.getOne(id);
     }
 
     public void savePost(Post post) {

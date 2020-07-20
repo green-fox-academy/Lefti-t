@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignee List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
+    <h1>Search for an Assignee</h1>
+    <form th:action="@{/todo/assigneesearch}"  method="GET">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Search</button>
+    </form>
+
+    <h1>Add new Assignee</h1>
+    <form  method="POST" th:action="@{/todo/add-assignee}" th:object="${assignee}">
+        <input autofocus required  type="text" name="name">
+        <input required  type="text" name="email">
+        <input type="submit" value="Add Assignee">
+    </form>
+
+</div>
+<a href="/todo/">Back to main</a>
+<h6>or back to :</h6>
+<a href="/todo/list">Todo List</a
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+
+    <tr th:each="ass:${assignees}">
+        <td th:utext="${ass.getId()}"></td>
+        <td th:utext="${ass.getName()}"></td>
+        <td th:utext="${ass.getEmail()}"></td>
+        <td><a th:href="@{|/todo/edit-assignee/${ass.id}/|}">Edit</a></td>
+        <td><a th:href="@{|/todo/delete-assignee/${ass.id}/|}">Delete</a></td>
+
+    </tr>
+</table>
+</body>
+</html>

@@ -4,9 +4,7 @@ import com.gfa.reddit.models.Post;
 import com.gfa.reddit.services.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PostController {
@@ -33,6 +31,18 @@ public class PostController {
     @PostMapping("/add-post")
     public String savePost(@ModelAttribute Post post) {
         postService.save(post.getTitle(),post.getUrl());
+        return "redirect:/index";
+    }
+
+    @GetMapping("/index/upvote/{id}")
+    public String upVote(Model model, @PathVariable Long id){
+        model.addAttribute("post", postService.getPost(id));
+        return "/index/upvote";
+    }
+
+    @PostMapping("/index/upvote/")
+    public String upVotePOST(@ModelAttribute("post")Post post, @RequestParam(value ="id") Long id){
+       postService.upVote(id,post.getTitle(),post.getUrl());
         return "redirect:/index";
     }
 }

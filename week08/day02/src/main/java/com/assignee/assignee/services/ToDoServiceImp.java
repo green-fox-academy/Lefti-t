@@ -1,6 +1,7 @@
 package com.assignee.assignee.services;
 
 import com.assignee.assignee.models.Todo;
+import com.assignee.assignee.repositories.AssigneeRepository;
 import com.assignee.assignee.repositories.IToDoRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,10 @@ import java.util.stream.Collectors;
 @Service
 public class ToDoServiceImp implements ToDoService {
     IToDoRepository iToDoRepository;
-
-    public ToDoServiceImp(IToDoRepository iToDoRepository) {
+AssigneeRepository assigneeRepository;
+    public ToDoServiceImp(IToDoRepository iToDoRepository, AssigneeRepository assigneeRepository) {
         this.iToDoRepository = iToDoRepository;
+        this.assigneeRepository = assigneeRepository;
     }
 
     @Override
@@ -47,6 +49,18 @@ public class ToDoServiceImp implements ToDoService {
     public void updateToDo(long id, String title, boolean urgent, boolean done) {
         Todo todo = new Todo(title, urgent, done);
         todo.setId(id);
+        todo.setDone(done);
+        todo.setUrgent(urgent);
+        this.iToDoRepository.save(todo);
+
+    }
+    @Override
+    public void updateToDo(long id, Long assigneeID, String title, boolean urgent, boolean done) {
+        Todo todo = new Todo(title, urgent, done);
+        todo.setId(id);
+        todo.setDone(done);
+        todo.setUrgent(urgent);
+        todo.setAssignee(this.assigneeRepository.getOne(assigneeID));
         this.iToDoRepository.save(todo);
 
     }

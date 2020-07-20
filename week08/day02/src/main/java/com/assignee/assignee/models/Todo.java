@@ -1,20 +1,20 @@
 package com.assignee.assignee.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 
 public class Todo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private boolean urgent;
     private boolean done;
 
+    @ManyToOne
+    @JoinColumn()
+    private Assignee assignee;
 
     public Todo( String title, boolean urgent, boolean done) {
         this.id = id;
@@ -61,4 +61,7 @@ public class Todo {
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public Assignee getAssignee() { return assignee; }
+    public void setAssignee(Assignee assignee) { this.assignee = assignee; }
 }
