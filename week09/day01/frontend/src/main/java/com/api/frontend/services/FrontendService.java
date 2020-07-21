@@ -1,14 +1,14 @@
 package com.api.frontend.services;
 
 import com.api.frontend.models.Greeter;
+import com.api.frontend.models.NumbersArray;
+import com.api.frontend.models.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
-import com.api.frontend.models.Result;
-import org.springframework.web.bind.annotation.PathVariable;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class FrontendService {
@@ -42,36 +42,51 @@ public class FrontendService {
     }
 
 
-
-    public Result getAction(String action , Integer until) {
+    public Result getAction(String action, Integer until) {
         Integer result = 0;
 
         switch (action) {
             case "sum":
-                result = getSum(until,result);
+                result = getSum(until, result);
                 break;
             case "factor":
-                result = getFactor(until,result);
+                result = getFactor(until, result);
                 break;
         }
         return new Result(result);
     }
 
-    private Integer getSum(final Integer until , Integer result){
+    private Integer getSum(final Integer until, Integer result) {
         for (int i = 0; i <= until; i++) {
             result += i;
         }
         return result;
     }
 
-    private Integer getFactor(final Integer until , Integer result){
-        int fact=1;
+    private Integer getFactor(final Integer until, Integer result) {
+        int fact = 1;
         for (int i = 1; i <= until; i++) {
-            fact=fact*i;
-            result =fact;
+            fact = fact * i;
+            result = fact;
         }
         return result;
     }
 
+    public Object arrayHandlerService(NumbersArray action) {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        switch (action) {
+            case "sum":
+                 Collections.singletonMap("result", numbers.stream().mapToInt(Integer::intValue)
+                        .sum());
+            case "multiply":
+                Collections.singletonMap("result", numbers.stream().reduce(1, (a, b) -> a * b));
+                break;
+            case "double":
+                Collections.singletonMap("result", numbers.stream().map(i->2*i).toArray(Integer[]::new));
+                break;
+
+        }
+        return new NumbersArray(numbers);
+    }
 
 }
