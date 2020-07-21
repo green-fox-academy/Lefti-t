@@ -6,6 +6,7 @@ import com.api.frontend.models.Greeter;
 import com.api.frontend.models.Until;
 import com.api.frontend.services.FrontendService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,7 @@ import java.util.Map;
 public class APIController {
 
     FrontendService frontendService = new FrontendService();
-    Greeter greeter = new Greeter();
-    Append append = new Append();
+
 
     @GetMapping("/doubling")
     @ResponseStatus(HttpStatus.OK)
@@ -41,10 +41,10 @@ public class APIController {
     }
 
     @PostMapping("dountil/{action}")
-    public Object dountil(@PathVariable(required = false) String action , @RequestBody Until until) {
+    public ResponseEntity<?> doUntil(@PathVariable(required = false) String action , @RequestBody Until until) {
         if(until.getUntil()==null){
-            return new Error("sjfkfjjfjf");
+            return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.BAD_REQUEST);
         }
-        return frontendService.getAction(action,until.getUntil());
+        return new ResponseEntity<>(frontendService.getAction(action,until.getUntil()), HttpStatus.OK);
     }
 }
