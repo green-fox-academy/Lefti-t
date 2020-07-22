@@ -14,7 +14,11 @@ import java.util.Map;
 @RestController
 public class APIController {
 
-    FrontendService frontendService = new FrontendService();
+FrontendService frontendService = new FrontendService();
+
+    public APIController(FrontendService frontendService) {
+        this.frontendService = frontendService;
+    }
 
 
     @GetMapping("/doubling")
@@ -46,12 +50,8 @@ public class APIController {
         return new ResponseEntity<>(frontendService.getAction(action, until.getUntil()), HttpStatus.OK);
     }
 
-    @PostMapping("/arrays/")
-    public ResponseEntity<?> arrayHandler(@RequestBody NumbersArray numbers) {
-        if (numbers.getNumbers() == null) {
-            return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
-        }
-
-        return new ResponseEntity<>(frontendService.arrayHandlerService(numbers),HttpStatus.OK);
+    @PostMapping("/arrays")
+    public ResponseEntity<?> arrayHandler(@RequestBody ArrayHandling numbers) {
+               return new ResponseEntity<>(frontendService.arrayHandlerService(numbers),HttpStatus.OK);
     }
 }

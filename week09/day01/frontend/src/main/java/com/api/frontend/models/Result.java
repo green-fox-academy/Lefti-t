@@ -1,7 +1,10 @@
 package com.api.frontend.models;
 
+import java.util.List;
+
 public class Result {
-    private Integer result;
+    private Object result;
+    private List<Integer> results;
 
     public Result(Integer result) {
         this.result = result;
@@ -10,7 +13,11 @@ public class Result {
     public Result() {
     }
 
-    public Integer getResult() {
+    public Result(List<Integer> results) {
+        this.results = results;
+    }
+
+    public Object getResult() {
         return result;
     }
 
@@ -18,6 +25,9 @@ public class Result {
         this.result = result;
     }
 
+    public void setResults(List<Integer> results) {
+        this.results = results;
+    }
 }
 
 

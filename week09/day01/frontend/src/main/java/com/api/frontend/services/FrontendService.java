@@ -1,13 +1,18 @@
 package com.api.frontend.services;
 
 import com.api.frontend.models.Greeter;
-import com.api.frontend.models.NumbersArray;
+import com.api.frontend.models.ArrayHandling;
 import com.api.frontend.models.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,21 +77,27 @@ public class FrontendService {
         return result;
     }
 
-    public Object arrayHandlerService(NumbersArray action) {
-        ArrayList<Integer> numbers = new ArrayList<Integer>();
-        switch (action) {
-            case "sum":
-                 Collections.singletonMap("result", numbers.stream().mapToInt(Integer::intValue)
-                        .sum());
-            case "multiply":
-                Collections.singletonMap("result", numbers.stream().reduce(1, (a, b) -> a * b));
-                break;
-            case "double":
-                Collections.singletonMap("result", numbers.stream().map(i->2*i).toArray(Integer[]::new));
-                break;
-
+    public Object arrayHandlerService(ArrayHandling what) {
+        int[] result = new int[what.getNumbers().size()];
+        if (what.getNumbers() == null) {
+            return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
+        } else {
+            switch (what.getWhat()) {
+                case "sum":
+                    int sum = what.getNumbers().stream().mapToInt(Integer::intValue).sum();
+                    return new Result(sum);
+                case "multiply":
+                    int multiplication = what.getNumbers().stream().reduce(1, (a, b) -> a * b);
+                    return new Result(multiplication);
+                case "double":
+                    int[] arrayOutput = new int[what.getNumbers().size()];
+                    for (int s = 0; s < result.length; s++) {
+                       int resultArray = what.getNumbers().get(s) * 2;
+                   arrayOutput[s] = resultArray;
+                    }
+                    return arrayOutput;
+            }
         }
-        return new NumbersArray(numbers);
+        return null;
     }
-
 }

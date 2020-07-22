@@ -3,19 +3,20 @@ package com.api.frontend.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NumbersArray {
+public class ArrayHandling {
     private String what;
-    private  List<Integer> numbers;
+    private List<Integer> numbers;
 
-    public NumbersArray(List<Integer> numbers) {
+
+    public ArrayHandling(List<Integer> numbers, String what) {
         this.what = what;
         this.numbers = numbers;
     }
 
-    public NumbersArray() {
+    public ArrayHandling() {
         this.numbers = new ArrayList<>();
-    }
 
+    }
 
 
     public String getWhat() {
@@ -26,11 +27,11 @@ public class NumbersArray {
         this.what = what;
     }
 
-    public  List<Integer> getNumbers() {
+    public List<Integer> getNumbers() {
         return numbers;
     }
 
-    public void setNumbers( List<Integer> numbers) {
+    public void setNumbers(List<Integer> numbers) {
         this.numbers = numbers;
     }
 }
