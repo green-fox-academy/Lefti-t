@@ -2,7 +2,6 @@ package com.gfa.reddit.services;
 
 import com.gfa.reddit.models.Post;
 import com.gfa.reddit.repositories.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,18 +17,18 @@ public class PostServiceImp implements  PostService{
     }
 
     @Override
-    public void upVote(Long id, String title, String url) {
-        Post post = new Post(title,url);
-        post.setId(id);
-        post.setVoteCount(+1);
+    public void upVote(Long id) {
+        Post post = postRepository.getOne(id);
+        int count = postRepository.getOne(id).getVoteCount();
+        post.setVoteCount(count +1);
         this.postRepository.save(post);
     }
 
     @Override
     public void downVote(Long id) {
-        Post post = new Post();
-        post.setId(id);
-        post.setVoteCount(-1);
+        Post post = postRepository.getOne(id);
+        int count = postRepository.getOne(id).getVoteCount();
+        post.setVoteCount(count -1);
         this.postRepository.save(post);
     }
 

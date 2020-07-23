@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public interface PostService {
 
-    void upVote(Long id,String title, String url);
+    void upVote(Long id);
 
     void downVote(Long id);
 
@@ -17,3 +17,5 @@ public interface PostService {
     List<Post> getPosts();
     Post getPost(Long id);
 }
+
+

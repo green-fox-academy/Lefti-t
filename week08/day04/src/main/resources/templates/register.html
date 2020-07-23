@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&family=Lobster&display=swap');
+    </style>
+</head>
+<body>
+
+<h1>Register</h1>
+<div th:if="${user != null && errorMessages != null}">
+    <form th:action="@{/users/add}" th:method="post">
+        <label for="userName" hidden>title</label>
+        <input type="text" id="username" name="username" placeholder="username"
+               th:value="${user.username == null}?'':${user.username}">
+
+        <input type="email" id="email" name="email" placeholder="example@example.com"
+               th:value="${user.email == null}?'':${user.email}">
+        <!--    <label for="author"></label>-->
+        <input type="password" id="password" name="password">
+        <input type="password" id="password2" name="password2">
+        <!--    <label for="price"></label>-->
+        <input type="submit">
+    </form>
+
+    <p th:each="error:${errorMessages}" th:text="${error}" class="error"></p>
+</div>
+
+<div th:unless="${user != null}">
+    <form th:action="@{/users/add}" th:method="post">
+        <label for="userName" hidden>title</label>
+        <input type="text" id="username" name="username" placeholder="username">
+
+        <input type="email" id="email" name="email" placeholder="example@example.com">
+        <!--    <label for="author"></label>-->
+        <input type="password" id="password" name="password">
+        <input type="password" id="password2" name="password2">
+        <!--    <label for="price"></label>-->
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+</html>

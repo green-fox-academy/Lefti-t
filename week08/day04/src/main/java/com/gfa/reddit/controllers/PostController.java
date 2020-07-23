@@ -34,15 +34,17 @@ public class PostController {
         return "redirect:/index";
     }
 
-    @GetMapping("/index/upvote/{id}")
-    public String upVote(Model model, @PathVariable Long id){
-        model.addAttribute("post", postService.getPost(id));
-        return "/index/upvote";
+
+
+    @GetMapping("{id}/upvote")
+    public String upVotePOST(@PathVariable(name = "id") long id){
+       postService.upVote(id);
+        return "redirect:/index";
     }
 
-    @PostMapping("/index/upvote/")
-    public String upVotePOST(@ModelAttribute("post")Post post, @RequestParam(value ="id") Long id){
-       postService.upVote(id,post.getTitle(),post.getUrl());
+    @GetMapping("{id}/downvote")
+    public String downVotePOST(@PathVariable(name = "id") long id){
+        postService.downVote(id);
         return "redirect:/index";
     }
 }

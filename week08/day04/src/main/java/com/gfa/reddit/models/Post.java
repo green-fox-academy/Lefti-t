@@ -1,18 +1,20 @@
 package com.gfa.reddit.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String url;
     private int voteCount;
+
+    @ManyToOne
+    @JoinColumn()
+    private User user;
 
     public Post( String title, String url) {
         this.id = id;
