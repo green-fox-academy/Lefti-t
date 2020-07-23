@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ToDoServiceImpTest {
 
     @Test
-    void getTodo() {
+    void getTodoTest() {
 
 
     }
