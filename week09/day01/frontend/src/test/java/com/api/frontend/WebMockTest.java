@@ -21,19 +21,17 @@ import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
-
-@AutoConfigureMockMvc
+@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
 public class WebMockTest {
 
-
-    @LocalServerPort
-    private int port;
+//
+//    @LocalServerPort
+//    private int port;
 
     private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
-            MediaType.APPLICATION_JSON.getSubtype(),
-            Charset.forName("utf8"));
+            MediaType.APPLICATION_JSON.getSubtype());
 
     @Autowired
     private MockMvc mockMvc;
@@ -43,12 +41,12 @@ public class WebMockTest {
 
     @Test
     public void getDoUntilSum_successful() throws Exception {
-        this.mockMvc.perform(post("https://localhost:" + port +"/dountil/sum")
-                .contentType(MediaType.APPLICATION_JSON)
+        this.mockMvc.perform(post("https://localhost:8080/dountil/sum")
+                .contentType(contentType)
                 .content("{\"until\": \"8\"}"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(contentType))
-                .andExpect(jsonPath("$.result", is("36")));
+                .andExpect(jsonPath("$.result", is(36)));
 
     }
 }
