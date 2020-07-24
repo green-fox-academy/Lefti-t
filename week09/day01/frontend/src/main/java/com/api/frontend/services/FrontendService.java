@@ -1,5 +1,6 @@
 package com.api.frontend.services;
 
+import com.api.frontend.models.Append;
 import com.api.frontend.models.Greeter;
 import com.api.frontend.models.ArrayHandling;
 import com.api.frontend.models.Result;
@@ -9,17 +10,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Service
 public class FrontendService {
 
     @Autowired
     public FrontendService() {
+    }
+
+    public String appended(){
+        return "Hello!";
     }
 
     public Object getGreeting(String name, String title, HttpServletResponse response) {
