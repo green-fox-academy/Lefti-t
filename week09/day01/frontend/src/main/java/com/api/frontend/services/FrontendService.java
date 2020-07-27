@@ -1,9 +1,6 @@
 package com.api.frontend.services;
 
-import com.api.frontend.models.Append;
-import com.api.frontend.models.Greeter;
-import com.api.frontend.models.ArrayHandling;
-import com.api.frontend.models.Result;
+import com.api.frontend.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +9,9 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
+import java.util.stream.Stream;
 
 @Service
 public class FrontendService {
@@ -25,7 +25,7 @@ public class FrontendService {
     }
 
     public Object getGreeting(String name, String title, HttpServletResponse response) {
-        Greeter greeter = new Greeter();
+
         Map<String, Object> greet = new HashMap<>();
 
         if (name != null && title != null) {
@@ -54,36 +54,43 @@ public class FrontendService {
 
         switch (action) {
             case "sum":
-                result = getSum(until, result);
+                result = getSum(until);
                 break;
             case "factor":
-                result = getFactor(until, result);
+                result = getFactor(until);
                 break;
         }
         return new Result(result);
     }
 
-    private Integer getSum(final Integer until, Integer result) {
-        for (int i = 0; i <= until; i++) {
-            result += i;
-        }
-        return result;
+    private Integer getSum(final Integer until) {
+
+       return Stream.of(until).mapToInt(n-> n * 4 ).sum();
+//
+//
+//        for (int i = 0; i <= until; i++) {
+//            result += i;
+//        }
+//        return result ;
     }
 
-    private Integer getFactor(final Integer until, Integer result) {
-        int fact = 1;
-        for (int i = 1; i <= until; i++) {
-            fact = fact * i;
-            result = fact;
-        }
-        return result;
+    private Integer getFactor(final Integer until) {
+        return Math.toIntExact(LongStream.rangeClosed(1, until)
+                .reduce(1, (long x, long y) -> x * y));
     }
+
+
+        //        int fact = 1;
+//        for (int i = 1; i <= until; i++) {
+//            fact = fact * i;
+//            result = fact;
+//        }
+//        return result;
+
 
     public Object arrayHandlerService(ArrayHandling what) {
         int[] result = new int[what.getNumbers().size()];
-        if (what.getNumbers() == null) {
-            return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
-        } else {
+
             switch (what.getWhat()) {
                 case "sum":
                     int sum = what.getNumbers().stream().mapToInt(Integer::intValue).sum();
@@ -92,14 +99,14 @@ public class FrontendService {
                     int multiplication = what.getNumbers().stream().reduce(1, (a, b) -> a * b);
                     return new Result(multiplication);
                 case "double":
-                    int[] arrayOutput = new int[what.getNumbers().size()];
-                    for (int s = 0; s < result.length; s++) {
-                       int resultArray = what.getNumbers().get(s) * 2;
-                   arrayOutput[s] = resultArray;
-                    }
-                    return arrayOutput;
+                    return what.getNumbers().stream().map(integer -> integer * 2).toArray();
+                //   int[] arrayOutput = new int[what.getNumbers().size()];
+//                    for (int s = 0; s < result.length; s++) {
+//                       int resultArray = what.getNumbers().get(s) * 2;
+//                   arrayOutput[s] = resultArray;
+//                    }
+//                    return arrayOutput;
             }
-        }
         return null;
     }
 }

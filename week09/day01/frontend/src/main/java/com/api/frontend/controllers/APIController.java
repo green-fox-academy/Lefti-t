@@ -52,6 +52,9 @@ FrontendService frontendService = new FrontendService();
 
     @PostMapping("/arrays")
     public ResponseEntity<?> arrayHandler(@RequestBody ArrayHandling numbers) {
+        if (numbers.getNumbers() == null || numbers.getWhat() == null) {
+            return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
+        }
                return new ResponseEntity<>(frontendService.arrayHandlerService(numbers),HttpStatus.OK);
     }
 }
