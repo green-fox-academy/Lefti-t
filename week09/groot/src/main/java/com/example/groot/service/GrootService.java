@@ -1,5 +1,6 @@
 package com.example.groot.service;
 
+import com.example.groot.Models.ErrorMessage;
 import com.example.groot.Models.Translated;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class GrootService {
               return translate;
           } else {
               response.setStatus(400);
-              translate.put("error", new Error("Error,I am Groot!"));
+              translate.put("error", new ErrorMessage("Error,I am Groot!"));
           }
         return translate;
     }

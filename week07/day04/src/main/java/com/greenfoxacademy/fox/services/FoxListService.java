@@ -1,5 +1,8 @@
-package com.greenfoxacademy.fox.models;
+package com.greenfoxacademy.fox.services;
 
+import com.greenfoxacademy.fox.models.Drink;
+import com.greenfoxacademy.fox.models.Food;
+import com.greenfoxacademy.fox.models.Fox;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -35,5 +38,11 @@ public class FoxListService {
     public List<String> getDrinkTypes() {
         return Stream.of(Drink.drinks.values()).map(Enum::name).map(String::toLowerCase).collect(Collectors.toList());
     }
+public void updateNutrition(String  name, String food,String drink){
+        Fox fox = new Fox();
+        fox.setName(name);
+        fox.setFood(food);
+        fox.setDrink(drink);
+}
 
 }

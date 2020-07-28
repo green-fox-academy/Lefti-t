@@ -2,6 +2,8 @@ package com.rascal.chat.controllers;
 
 
 import com.rascal.chat.models.User;
+import com.rascal.chat.services.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +15,13 @@ import java.util.*;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
+    final
+    UserServiceImpl userService;
+
+    public RestController(UserServiceImpl userService) {
+        this.userService = userService;
+    }
+
     /*
      * Example of sending a postRequset with restTemplate with just body
      * body can be represented by: Map<String, Object> or Models objects itself
@@ -22,9 +31,7 @@ public class RestController {
     ResponseEntity<?> register() {
         RestTemplate restTemplate = new RestTemplate();
         String url = "https://rascals-chat.herokuapp.com/api/user/register";
-        Map<String, Object> data = new HashMap<>();
-        data.put("login", "u7");
-        data.put("password", "123");
+    userService.registerUser()
 
         ResponseEntity<?> response = restTemplate.postForEntity(url, data, User.class);
 

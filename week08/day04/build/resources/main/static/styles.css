@@ -47,7 +47,7 @@ th {
 }
 
 
-th, td {
+th, td, h2 {
     margin-left: auto;
     padding: 10px;
     text-align: center;

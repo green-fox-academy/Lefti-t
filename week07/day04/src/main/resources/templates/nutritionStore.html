@@ -22,7 +22,7 @@
     <select class="form-control" id="food" name="foodList">
         <option value="">Select Food</option>
         <option th:each="food : ${foxFood}"
-                th:value="${food}"
+                th:value="${newFood}"
                 th:text="${food}"></option>
     </select>
 </div>

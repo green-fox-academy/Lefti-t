@@ -9,25 +9,24 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private Long userId;
     private String username;
-    private String email;
     private String password;
 
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
-    public User(Long userId, String username, String email, String password, List<Post> posts) {
+    public User(Long userId, String username, String password, List<Post> posts) {
         this.userId = userId;
         this.username = username;
-        this.email = email;
+
         this.password = password;
         this.posts = posts;
     }
 
-    public User(String username, String email, String password) {
+    public User(String username,  String password) {
         this.username = username;
-        this.email = email;
+
         this.password = password;
         this.posts = null;
     }
@@ -36,11 +35,11 @@ public class User {
 
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -52,13 +51,6 @@ public class User {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPassword() {
         return password;

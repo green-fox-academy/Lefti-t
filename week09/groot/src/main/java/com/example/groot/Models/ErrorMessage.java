@@ -1,13 +1,13 @@
 package com.example.groot.Models;
 
-public class Error {
+public class ErrorMessage {
     private String error;
 
-    public Error(String error) {
+    public ErrorMessage(String error) {
         this.error = error;
     }
 
-    public Error() {
+    public ErrorMessage() {
     }
 
     public String getError() {

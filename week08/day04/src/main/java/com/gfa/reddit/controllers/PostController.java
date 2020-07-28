@@ -14,7 +14,7 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping({"/","/index"})
+    @GetMapping({"/index"})
     public String main(Model model) {
         model.addAttribute("post", postService.getPosts());
         return "index";
@@ -33,7 +33,6 @@ public class PostController {
         postService.save(post.getTitle(),post.getUrl());
         return "redirect:/index";
     }
-
 
 
     @GetMapping("{id}/upvote")

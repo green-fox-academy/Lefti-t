@@ -23,6 +23,9 @@ public class Fox {
         this.drink = "vodka";
     }
 
+    public Fox() {
+    }
+
     public String getName() {
         return name;
     }

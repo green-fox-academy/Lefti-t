@@ -12,24 +12,14 @@
 <body>
 
 <h1>Log in</h1>
-<div th:if="${user != null && errorMessages != null}">
-    <form th:action="@{/users/login}" th:method="post">
-        <input type="email" id="email" name="email" placeholder="example@example.com"
-               th:value="${user.email == null}?'':${user.email}">
-        <input type="password" id="password" name="password">
-        <input type="submit">
+    <form th:action="@{/login}" th:method="post">
+        <label for="username" hidden>Username</label>
+        <input type="text" id="username" name="username" placeholder="username" autofocus  required >
+        <label for="pass">Password: </label>
+        <input type="password" id="pass" name="password" required>
+        <input type="submit" value="Login">
     </form>
 
-    <p th:each="error:${errorMessages}" th:text="${error}" class="error"></p>
-</div>
-
-<div th:unless="${user != null}">
-    <form th:action="@{/users/login}" th:method="post">
-        <input type="email" id="email" name="email" placeholder="example@example.com">
-        <input type="password" id="password" name="password">
-        <input type="submit">
-    </form>
-</div>
 
 </body>
 </html>

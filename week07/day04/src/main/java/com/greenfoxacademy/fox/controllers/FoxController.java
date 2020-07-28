@@ -1,7 +1,6 @@
 package com.greenfoxacademy.fox.controllers;
 
-import com.greenfoxacademy.fox.models.FoxListService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.greenfoxacademy.fox.services.FoxListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +27,13 @@ public class FoxController {
     }
 
     @PostMapping("/nutritionNew")
-    public String changeNutrition(Model model, @RequestParam String name, String newFood, String newDrink) {
-        foxList.findFoxName(name).setFood(newFood);
-        foxList.findFoxName(name).setDrink(newDrink);
-        return "index";
+    public String changeNutrition(String newFood, String newDrink, @RequestParam String name) {
+        foxList.updateNutrition(name,newFood,newDrink);
+        return "redirect:/?name=" + name;
+    }
+
+    @GetMapping("trickCenter")
+    public String trickCenter(){
+        return "trickCenter";
     }
 }
