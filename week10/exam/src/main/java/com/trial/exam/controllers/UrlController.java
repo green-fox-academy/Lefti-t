@@ -4,10 +4,9 @@ import com.trial.exam.models.Url;
 import com.trial.exam.services.UrlService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class UrlController {
@@ -27,13 +26,25 @@ public class UrlController {
     @PostMapping("/save-link")
     public String saveUrl(Model model, @ModelAttribute("url") Url url, @RequestParam String newUrl, @RequestParam String newAlias) {
         if (urlService.getUrlByAlias(newAlias) != null) {
-           model.addAttribute("aliasExist","true");
+            model.addAttribute("aliasExist", "true");
         } else {
             this.urlService.save(newUrl, newAlias);
-            model.addAttribute("aliasExist","false");
+            model.addAttribute("aliasExist", "false");
             model.addAttribute("secretCode", urlService.getUrlByAlias(newAlias).getSecretCode());
             model.addAttribute("alias", urlService.getUrlByAlias(newAlias).getAlias());
         }
         return "main";
     }
+
+    @GetMapping("/a/{alias}")
+    public String getByAlias(@PathVariable String alias, HttpServletResponse httpServletResponse) {
+        if (urlService.getUrlByAlias(alias) != null) {
+            this.urlService.getUrlByAlias(alias).setHitCount(+1);
+            httpServletResponse.setStatus(HttpServletResponse.SC_OK);
+            return "redirect:https://" + urlService.getUrlByAlias(alias).getUrl();
+        } else {
+            httpServletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            throw new ResourceNotFoundException();
+        }
     }
+}
