@@ -1,11 +1,15 @@
 package com.trial.exam.controllers;
 
+import com.trial.exam.models.Url;
 import com.trial.exam.services.UrlService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+@Controller
 public class UrlController {
 
     final
@@ -16,7 +20,20 @@ public class UrlController {
     }
 
     @GetMapping("/")
-    public String main(){
-        return "index";
+    public String main() {
+        return "main";
     }
-}
+
+    @PostMapping("/save-link")
+    public String saveUrl(Model model, @ModelAttribute("url") Url url, @RequestParam String newUrl, @RequestParam String newAlias) {
+        if (urlService.getUrlByAlias(newAlias) != null) {
+           model.addAttribute("aliasExist","true");
+        } else {
+            this.urlService.save(newUrl, newAlias);
+            model.addAttribute("aliasExist","false");
+            model.addAttribute("secretCode", urlService.getUrlByAlias(newAlias).getSecretCode());
+            model.addAttribute("alias", urlService.getUrlByAlias(newAlias).getAlias());
+        }
+        return "main";
+    }
+    }

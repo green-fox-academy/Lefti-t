@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans&family=Yellowtail&family=Lobster&display=swap');
+    </style>
+</head>
+<body>
+<div id="msg" th:if="${aliasExist} == 'true'">
+    <h2 th:utext="'Your alias '+ ${alias} +' is already in use!'"></h2>
+</div>
+
+<div id="msg" th:if="${aliasExist} == 'false'">
+    <h2 th:utext="'Your URL is aliased to ' + ${alias} + ' and your secret code is ' + ${secretCode}"></h2>
+</div>
+<form  th:method="POST" th:action="@{/save-link}" >
+    <div><label for="newUrl">URL: </label>
+        <input type="text"  id="newUrl" name="newUrl" placeholder="" autofocus required></div>
+    <div><label for="newAlias">Alias: </label>
+        <input  type="text" id="newAlias" name="newAlias" required></div>
+    <div><input type="submit" value="Submit"></div>
+
+</form>
+
+
+</body>
+</html>

@@ -1,11 +1,9 @@
 package com.trial.exam.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "url")
 public class Url {
 
     @Id
@@ -20,10 +18,11 @@ public class Url {
     public Url() {
     }
 
-    public Url(String url,String alias) {
+    public Url(String url,String alias,Integer secretCode) {
         this.url = url;
         this.alias = alias;
         this.hitCount = 0;
+        this.secretCode = secretCode;
     }
 
     public Long getId() {
