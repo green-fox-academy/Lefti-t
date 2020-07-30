@@ -23,4 +23,6 @@ public interface UrlService {
     Url getUrlById(Long id);
 
     void deleteById(Long id);
+
+    void increaseHitCount(String alias);
 }

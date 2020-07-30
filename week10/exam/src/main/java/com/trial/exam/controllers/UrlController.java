@@ -28,7 +28,7 @@ public class UrlController {
     }
 
     @PostMapping("/save-link")
-    public String saveUrl(Model model, @ModelAttribute("url") Url url, @RequestParam String newUrl, @RequestParam String newAlias) {
+    public String saveUrl(Model model,@RequestParam String newUrl, @RequestParam String newAlias) {
         if (urlService.getUrlByAlias(newAlias) != null) {
             model.addAttribute("aliasExist", "true");
         } else {
@@ -41,9 +41,9 @@ public class UrlController {
     }
 
     @GetMapping("/a/{alias}")
-    public String getByAlias(@PathVariable String alias, HttpServletResponse httpServletResponse) {
+    public String getByAlias(@PathVariable String alias, @ModelAttribute("url") Url url, HttpServletResponse httpServletResponse) {
         if (urlService.getUrlByAlias(alias) != null) {
-            this.urlService.getUrlByAlias(alias).setHitCount(+1);
+            this.urlService.increaseHitCount(alias);
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
             return "redirect:https://" + urlService.getUrlByAlias(alias).getUrl();
         } else {

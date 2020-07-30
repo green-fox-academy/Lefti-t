@@ -60,4 +60,11 @@ public class UrlServiceImpl implements UrlService  {
     public void deleteById(Long id) {
          this.urlRepository.deleteById(id);
     }
+
+    @Override
+    public void increaseHitCount(String alias) {
+        Url url = this.urlRepository.findUrlByAlias(alias);
+        url.setHitCount(url.getHitCount() + 1);
+        this.urlRepository.save(url);
+    }
 }
