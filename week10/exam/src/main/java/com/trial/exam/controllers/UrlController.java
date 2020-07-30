@@ -41,7 +41,7 @@ public class UrlController {
     }
 
     @GetMapping("/a/{alias}")
-    public String getByAlias(@PathVariable String alias, @ModelAttribute("url") Url url, HttpServletResponse httpServletResponse) {
+    public String getByAlias(@PathVariable String alias, HttpServletResponse httpServletResponse) {
         if (urlService.getUrlByAlias(alias) != null) {
             this.urlService.increaseHitCount(alias);
             httpServletResponse.setStatus(HttpServletResponse.SC_OK);
