@@ -4,6 +4,7 @@ import com.trial.exam.models.Url;
 import com.trial.exam.repositories.UrlRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -42,5 +43,11 @@ public class UrlServiceImpl implements UrlService  {
     @Override
     public Url getUrlBySecretCode(Integer secretCode) {
         return this.urlRepository.findUrlBySecretCode(secretCode);
+    }
+
+    @Override
+    public List<Url> getUrls() {
+        List<Url> urls = this.urlRepository.findAll();
+        return urls;
     }
 }

@@ -1,21 +1,27 @@
 package com.trial.exam.controllers;
 
 import com.trial.exam.models.Url;
+import com.trial.exam.services.UrlMapper;
 import com.trial.exam.services.UrlService;
+import com.trial.exam.services.payload.UrlDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 public class UrlController {
 
     final
     UrlService urlService;
+    final
+    UrlMapper urlMapper;
 
-    public UrlController(UrlService urlService) {
+    public UrlController(UrlService urlService, UrlMapper urlMapper) {
         this.urlService = urlService;
+        this.urlMapper = urlMapper;
     }
 
     @GetMapping("/")
@@ -47,4 +53,6 @@ public class UrlController {
             throw new ResourceNotFoundException();
         }
     }
+
+
 }
