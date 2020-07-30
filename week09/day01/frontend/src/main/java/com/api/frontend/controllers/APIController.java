@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 public class APIController {
 
-FrontendService frontendService = new FrontendService();
+    FrontendService frontendService = new FrontendService();
 
     public APIController(FrontendService frontendService) {
         this.frontendService = frontendService;
@@ -55,6 +55,6 @@ FrontendService frontendService = new FrontendService();
         if (numbers.getNumbers() == null || numbers.getWhat() == null) {
             return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
         }
-               return new ResponseEntity<>(frontendService.arrayHandlerService(numbers),HttpStatus.OK);
+        return new ResponseEntity<>(frontendService.arrayHandlerService(numbers), HttpStatus.OK);
     }
 }

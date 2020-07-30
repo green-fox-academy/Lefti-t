@@ -10,26 +10,28 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MainController {
 
-final
-FrontendService frontendService;
+    final
+    FrontendService frontendService;
 
     public MainController(FrontendService frontendService) {
         this.frontendService = frontendService;
     }
 
     @GetMapping("/")
-  public String main() {
-       return "index";
-  }
+    public String main() {
+        return "index";
+    }
 
     @RequestMapping("/test")
-    public @ResponseBody String greeting(){
+    public @ResponseBody
+    String greeting() {
         return "Hello, World";
     }
 
 
     @RequestMapping("/append")
-    public @ResponseBody String append(){
-        return frontendService.appended() ;
+    public @ResponseBody
+    String append() {
+        return frontendService.appended();
     }
 }

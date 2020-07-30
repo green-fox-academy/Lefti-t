@@ -20,7 +20,7 @@ public class FrontendService {
     public FrontendService() {
     }
 
-    public String appended(){
+    public String appended() {
         return "Hello!";
     }
 
@@ -65,7 +65,7 @@ public class FrontendService {
 
     private Integer getSum(final Integer until) {
 
-       return Stream.of(until).mapToInt(n-> n * 4 ).sum();
+        return Stream.of(until).mapToInt(n -> n * 4).sum();
 //
 //
 //        for (int i = 0; i <= until; i++) {
@@ -80,7 +80,7 @@ public class FrontendService {
     }
 
 
-        //        int fact = 1;
+    //        int fact = 1;
 //        for (int i = 1; i <= until; i++) {
 //            fact = fact * i;
 //            result = fact;
@@ -91,22 +91,22 @@ public class FrontendService {
     public Object arrayHandlerService(ArrayHandling what) {
         int[] result = new int[what.getNumbers().size()];
 
-            switch (what.getWhat()) {
-                case "sum":
-                    int sum = what.getNumbers().stream().mapToInt(Integer::intValue).sum();
-                    return new Result(sum);
-                case "multiply":
-                    int multiplication = what.getNumbers().stream().reduce(1, (a, b) -> a * b);
-                    return new Result(multiplication);
-                case "double":
-                    return what.getNumbers().stream().map(integer -> integer * 2).toArray();
-                //   int[] arrayOutput = new int[what.getNumbers().size()];
+        switch (what.getWhat()) {
+            case "sum":
+                int sum = what.getNumbers().stream().mapToInt(Integer::intValue).sum();
+                return new Result(sum);
+            case "multiply":
+                int multiplication = what.getNumbers().stream().reduce(1, (a, b) -> a * b);
+                return new Result(multiplication);
+            case "double":
+                return what.getNumbers().stream().map(integer -> integer * 2).toArray();
+            //   int[] arrayOutput = new int[what.getNumbers().size()];
 //                    for (int s = 0; s < result.length; s++) {
 //                       int resultArray = what.getNumbers().get(s) * 2;
 //                   arrayOutput[s] = resultArray;
 //                    }
 //                    return arrayOutput;
-            }
+        }
         return null;
     }
 }

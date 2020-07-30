@@ -19,11 +19,11 @@ public class Doubling {
     }
 
 
-    public Map<String,Object> doubleInput() {
+    public Map<String, Object> doubleInput() {
         Map<String, Object> doubled = new HashMap<>();
-            doubled.put("received", input);
-            input = input * 2;
-            doubled.put("result", new Doubling(input).getInput());
+        doubled.put("received", input);
+        input = input * 2;
+        doubled.put("result", new Doubling(input).getInput());
         return doubled;
     }
 }

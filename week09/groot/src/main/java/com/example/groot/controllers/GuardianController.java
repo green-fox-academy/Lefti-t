@@ -22,11 +22,11 @@ public class GuardianController {
 
 
     @GetMapping("/groot")
-    public Object grootTranslator( @RequestParam (required = false) String message, HttpServletResponse response){
+    public Object grootTranslator(@RequestParam(required = false) String message, HttpServletResponse response) {
 //
 //        if (message == null) {
 //            return new ResponseEntity<>(grootService.showError( new Error("Error,I am Groot!")), HttpStatus.BAD_GATEWAY)  ;
 //        }
-        return  grootService.translateGroot(message, response);
+        return grootService.translateGroot(message, response);
     }
 }

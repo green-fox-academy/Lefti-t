@@ -13,18 +13,18 @@ import java.util.Map;
 public class GrootService {
 
 
-    public Object translateGroot(String message, HttpServletResponse response){
-      Translated translated = new Translated();
+    public Object translateGroot(String message, HttpServletResponse response) {
+        Translated translated = new Translated();
         Map<String, Object> translate = new HashMap<>();
-          if( message != null) {
-              response.setStatus(HttpServletResponse.SC_OK);
-              translate.put("received", String.format("%s", message));
-              translate.put("translated", String.format("%s", translated.getTranslated()));
-              return translate;
-          } else {
-              response.setStatus(400);
-              translate.put("error", new ErrorMessage("Error,I am Groot!"));
-          }
+        if (message != null) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            translate.put("received", String.format("%s", message));
+            translate.put("translated", String.format("%s", translated.getTranslated()));
+            return translate;
+        } else {
+            response.setStatus(400);
+            translate.put("error", new ErrorMessage("Error,I am Groot!"));
+        }
         return translate;
     }
 }
