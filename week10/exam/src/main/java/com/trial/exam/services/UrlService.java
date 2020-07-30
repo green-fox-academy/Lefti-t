@@ -19,4 +19,8 @@ public interface UrlService {
     Url getUrlBySecretCode(Integer secretCode);
 
     List<Url> getUrls();
+
+    Url getUrlById(Long id);
+
+    void deleteById(Long id);
 }

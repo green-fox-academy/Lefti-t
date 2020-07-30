@@ -3,13 +3,11 @@ package com.trial.exam.controllers;
 import com.trial.exam.models.Url;
 import com.trial.exam.services.UrlMapper;
 import com.trial.exam.services.UrlService;
-import com.trial.exam.services.payload.UrlDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 @Controller
 public class UrlController {
@@ -50,7 +48,7 @@ public class UrlController {
             return "redirect:https://" + urlService.getUrlByAlias(alias).getUrl();
         } else {
             httpServletResponse.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            throw new ResourceNotFoundException();
+            throw new ResourceNotFound404();
         }
     }
 

@@ -50,4 +50,14 @@ public class UrlServiceImpl implements UrlService  {
         List<Url> urls = this.urlRepository.findAll();
         return urls;
     }
+
+    @Override
+    public Url getUrlById(Long id) {
+        return this.urlRepository.getOne(id);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+         this.urlRepository.deleteById(id);
+    }
 }
