@@ -1,7 +1,5 @@
 package com.trial.exam.controllers;
 
-import com.trial.exam.models.Url;
-import com.trial.exam.services.UrlMapper;
 import com.trial.exam.services.UrlService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +12,11 @@ public class UrlController {
 
     final
     UrlService urlService;
-    final
-    UrlMapper urlMapper;
 
-    public UrlController(UrlService urlService, UrlMapper urlMapper) {
+
+    public UrlController(UrlService urlService) {
         this.urlService = urlService;
-        this.urlMapper = urlMapper;
+
     }
 
     @GetMapping("/")
