@@ -31,6 +31,11 @@ export default {
   methods: {
     createItem: function () {
         this.$emit("createTodo",this.todo)
+         this.todo = {
+          title: "",
+          project: "",
+          done: false,
+        }
         },
   }
 }
