@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-bind:key="todo.id" v-for="todo in todos">
+    <div v-bind:key="todo.title" v-for="todo in todos">
+ 
       <TodoItem id="todo-container" v-bind:todo="todo" v-on:itemDeletion="deleteTodo(todo)" />
     </div>
   </div>
@@ -9,10 +10,13 @@
 <script>
 import TodoItem from "./TodoItem.vue";
 
+
+
 export default {
   name: "Todo",
   components: {
     TodoItem,
+
   },
   props: ["todos"],
   methods: {

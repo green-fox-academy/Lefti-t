@@ -16,16 +16,16 @@
     </div>
   </div>
   <div v-else class="edit-item">
-    <form id="app" @submit="checkForm" action method="post">
+    <form id="app" @submit="checkForm" >
       <p>
         <label id="input-label-title" for="input-field">Title :</label>
-        <input id="input-field-title" v-model="title" type="text" name="name" required />
+        <input id="input-field-title" v-model="title" type="text" name="title" required />
       </p>
       <p>
         <label id="input-label-project" for="input-field">Project :</label>
-        <input id="input-field-project" v-model="age" type="text" name="project" required />
+        <input id="input-field-project" v-model="project" type="text" name="project" required />
       </p>
-      <button class="done" type="submit">
+      <button class="pending" type="submit">
         <span>Submit changes</span>
       </button>
     </form>
@@ -98,7 +98,7 @@ button:focus {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   border-top: 1px solid black;
-  left: 0;
+  
 }
 
 .pending {
@@ -113,6 +113,7 @@ button:focus {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top: 1px solid black;
+  left: 0;
 }
 
 .pending:hover span {
