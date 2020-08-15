@@ -1,21 +1,23 @@
 <template>
-    <form id="add-form"  @submit.stop.prevent >
+    <form id="add-form"  @submit.prevent="createItem" >
       <p id="newTask">Add a task</p>
       <p>
         <label id="input-label-title" for="title">Title :</label>
-        <input id="input-field-title" v-model="todo.title" type="text" name="title" required />
+        <input id="input-field-title" v-model="todo.title" name="title" type="text" required />
       </p>
       <p>
         <label id="input-label-project" for="project">Project :</label>
-        <input id="input-field-project" v-model="todo.project" type="text" name="project" required />
+        <input id="input-field-project" v-model="todo.project" name="project" type="text"  required />
       </p>
-      <button class="pending" v-on:click="createItem">
+      <button class="pending">
         <span>Create</span>
       </button>
+     
     </form>
 </template>
 
 <script>
+
 export default {
     data: function () {
     return {
@@ -29,7 +31,7 @@ export default {
   methods: {
     createItem: function () {
         this.$emit("createTodo",this.todo)
-        }
+        },
   }
 }
 </script>

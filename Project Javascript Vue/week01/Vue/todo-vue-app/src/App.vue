@@ -15,7 +15,7 @@ import CreateTodo from "./components/CreateTodo.vue";
 
 export default {
   name: "App",
-  
+
   components: {
     Todo,
     CreateTodo,
@@ -24,19 +24,16 @@ export default {
     return {
       todos: [
         {
-      
           title: "Todo 1",
           project: "Project A",
           done: false,
         },
         {
-        
           title: "Todo 2",
           project: "Project B",
           done: true,
         },
         {
-         
           title: "Todo 3",
           project: "Project B",
           done: false,
@@ -48,6 +45,7 @@ export default {
     createTodo: function (todo) {
       this.todos.push(todo);
     },
+    
   },
 };
 </script>
