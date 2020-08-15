@@ -6,17 +6,17 @@
     <button id="delete" v-on:click="deleteItem(todo)">🗑</button>
     <div v-if="todo.done === true" class="done">
       <button v-on:click="todo.done = false">
-        <span>COMPLETED</span>
+        <span>Completed</span>
       </button>
     </div>
     <div v-else class="pending">
       <button v-on:click="todo.done = true">
-        <span>PENDING</span>
+        <span>Pending</span>
       </button>
     </div>
   </div>
   <div v-else class="edit-item">
-    <form id="app" @submit="checkForm" >
+    <form id="edit-form" @submit="checkForm">
       <p>
         <label id="input-label-title" for="input-field">Title :</label>
         <input id="input-field-title" v-model="title" type="text" name="title" required />
@@ -38,8 +38,8 @@ export default {
   props: ["todo"],
   methods: {
     deleteItem: function () {
-        this.$emit("itemDeletion",this.todo)
-        }
+      this.$emit("itemDeletion", this.todo);
+    },
   },
   data() {
     return {
@@ -79,7 +79,7 @@ button {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 20px;
-  color: whitesmoke;
+  color: black;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -89,8 +89,8 @@ button:focus {
 .done {
   width: 100%;
   height: 30px;
-  background: green;
-  color: whitesmoke;
+  background: linear-gradient(white, lightblue 99%);
+  color: black;
   position: absolute;
   bottom: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -98,14 +98,13 @@ button:focus {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   border-top: 1px solid black;
-  
 }
 
 .pending {
   width: 100%;
   height: 30px;
-  background: lightgray;
-  color: red;
+  background: linear-gradient(white, lightgray 99%);
+  color: black;
   position: absolute;
   bottom: 0;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -166,7 +165,7 @@ button:focus {
   font-weight: bold;
   position: absolute;
   left: 25px;
-  top: 15px;
+  top: 20px;
 }
 #input-field-title {
   position: absolute;
@@ -174,7 +173,9 @@ button:focus {
   right: 15px;
   width: 60%;
   height: 30px;
-  border: none;
+  border: 1px solid black;
+  background: none;
+  border-radius: 5px;
 }
 #input-label-project {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -193,5 +194,8 @@ button:focus {
   height: 30px;
   border: none;
   bottom: 45px;
+   border: 1px solid black;
+  background: none;
+  border-radius: 5px;
 }
 </style>
