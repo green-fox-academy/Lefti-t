@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div v-bind:key="todo.title" v-for="todo in todos">
+    <div v-bind:key="todo.title"  v-for="todo in todos">
  
-      <TodoItem id="todo-container" v-bind:todo="todo" v-on:itemDeletion="deleteTodo(todo)" />
+    <TodoItem id="todo-container" v-bind:todo="todo"
+      v-on:itemDeletion="deleteTodo(todo)"  v-on:editing="editTodo($event)" />
     </div>
   </div>
 </template>
@@ -24,7 +25,12 @@ export default {
       const todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
     },
+    editTodo(todo,todoEdited){
+      const indexedTodo = this.todos.indexOf(todo);
+      this.todos[indexedTodo]=todoEdited;
+      }
   },
+
 };
 </script>
 

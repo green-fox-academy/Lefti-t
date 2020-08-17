@@ -16,16 +16,22 @@
     </div>
   </div>
   <div v-else class="edit-item">
-    <form id="edit-form" @submit="checkForm">
+    <form id="edit-form" @submit.prevent="editItem">
       <p>
         <label id="input-label-title" for="input-field">Title :</label>
-        <input id="input-field-title" v-model="title" type="text" name="title" required />
+        <input id="input-field-title" v-model="todoEdited.title" type="text" name="title" required />
       </p>
       <p>
         <label id="input-label-project" for="input-field">Project :</label>
-        <input id="input-field-project" v-model="project" type="text" name="project" required />
+        <input
+          id="input-field-project"
+          v-model="todoEdited.project"
+          type="text"
+          name="project"
+          required
+        />
       </p>
-      <button class="pending" type="submit">
+      <button class="pending">
         <span>Submit changes</span>
       </button>
     </form>
@@ -40,9 +46,18 @@ export default {
     deleteItem: function () {
       this.$emit("itemDeletion", this.todo);
     },
+    editItem: function () {
+      this.$emit("editing", this.todoEdited);
+      this.todo.title = this.todoEdited.title;
+      this.todo.project = this.todoEdited.project;
+    
+
+      this.editing.edit = false;
+    },
   },
   data() {
     return {
+      todoEdited: { ...this.todo },
       editing: {
         edit: false,
       },
@@ -194,7 +209,7 @@ button:focus {
   height: 30px;
   border: none;
   bottom: 45px;
-   border: 1px solid black;
+  border: 1px solid black;
   background: none;
   border-radius: 5px;
 }

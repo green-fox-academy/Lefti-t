@@ -57,10 +57,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 #logo {
+  margin-top: 10px;
   height: 350px;
+
 }
 a {
   text-decoration: none;
